@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>ACM-计算几何(基础) | Hsueh</title>
+  <meta name="description" content="ACM-计算几何(基础)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ACM-计算几何(基础)">
+<meta property="og:url" content="https://gitee.com/Hsueh37/blog/2019/08/06/ACM-%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95(%E5%9F%BA%E7%A1%80)/index.html">
+<meta property="og:site_name" content="Hsueh&#39;s Blog">
+<meta property="og:description" content="ACM-计算几何(基础)">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-08-06T07:40:00.000Z">
+<meta property="article:modified_time" content="2020-04-28T09:02:42.264Z">
+<meta property="article:author" content="Hsueh-">
+<meta property="article:tag" content="知识点">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://gitee.com/Hsueh37/blog/2019/08/06/ACM-%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95(%E5%9F%BA%E7%A1%80)/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Hsueh&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/Hsueh-Xue" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Hsueh-</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">HZNUer &amp; Student</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Hangzhou, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">Repository</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">Links</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">About</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/Hsueh-Xue" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://weibo.com/u/5609636028" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p><del>退役</del>ACMer</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/2019%E7%89%9B%E5%AE%A2%E5%A4%9A%E6%A0%A1/" rel="tag">2019牛客多校</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ACM/" rel="tag">ACM</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Codeforces/" rel="tag">Codeforces</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HDU/" rel="tag">HDU</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HDU%E5%A4%9A%E6%A0%A1/" rel="tag">HDU多校</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HUD%E5%A4%9A%E6%A0%A1/" rel="tag">HUD多校</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Latex/" rel="tag">Latex</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Regional/" rel="tag">Regional</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nowcoder/" rel="tag">nowcoder</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/online/" rel="tag">online</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python-tools/" rel="tag">python tools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag">服务器</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%9F%A5%E8%AF%86%E7%82%B9/" rel="tag">知识点</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%B3%BB%E7%BB%9F/" rel="tag">系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%B2%E8%AF%BE/" rel="tag">讲课</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/2019%E7%89%9B%E5%AE%A2%E5%A4%9A%E6%A0%A1/" style="font-size: 13.75px;">2019牛客多校</a> <a href="/tags/ACM/" style="font-size: 13.5px;">ACM</a> <a href="/tags/Codeforces/" style="font-size: 13.75px;">Codeforces</a> <a href="/tags/HDU/" style="font-size: 13px;">HDU</a> <a href="/tags/HDU%E5%A4%9A%E6%A0%A1/" style="font-size: 13.5px;">HDU多校</a> <a href="/tags/HUD%E5%A4%9A%E6%A0%A1/" style="font-size: 13.25px;">HUD多校</a> <a href="/tags/Latex/" style="font-size: 13px;">Latex</a> <a href="/tags/Regional/" style="font-size: 13px;">Regional</a> <a href="/tags/nowcoder/" style="font-size: 13px;">nowcoder</a> <a href="/tags/online/" style="font-size: 13.25px;">online</a> <a href="/tags/python-tools/" style="font-size: 13px;">python tools</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 13.25px;">服务器</a> <a href="/tags/%E7%9F%A5%E8%AF%86%E7%82%B9/" style="font-size: 14px;">知识点</a> <a href="/tags/%E7%B3%BB%E7%BB%9F/" style="font-size: 13px;">系统</a> <a href="/tags/%E8%AE%B2%E8%AF%BE/" style="font-size: 13.25px;">讲课</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2020/11/30/2020%E5%B9%B4CCCC-%E6%80%BB%E5%86%B3%E8%B5%9B/" class="title">2020年CCCC-总决赛</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-11-30T04:00:00.000Z" itemprop="datePublished">2020-11-30</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2020/10/10/%E4%B8%AA%E4%BA%BA%E8%B6%B3%E8%BF%B9%E5%9B%BE%E7%BB%98%E5%88%B6/" class="title">个人足迹图绘制</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-10-10T01:40:00.000Z" itemprop="datePublished">2020-10-10</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2020/05/06/Ubuntu%E9%83%A8%E7%BD%B2django/" class="title">Ubuntu部署django</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-05-06T00:51:46.000Z" itemprop="datePublished">2020-05-06</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2020/03/20/v2rayN%E6%90%AD%E5%BB%BA/" class="title">v2rayN搭建</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-03-20T14:54:48.000Z" itemprop="datePublished">2020-03-20</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2020/03/11/%E7%BD%91%E7%BB%9C%E6%B5%8124%E9%A2%98/" class="title">网络流24题</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-03-11T11:28:02.000Z" itemprop="datePublished">2020-03-11</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-ACM-计算几何(基础)" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ACM-计算几何(基础)
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2019/08/06/ACM-%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95(%E5%9F%BA%E7%A1%80)/" class="article-date">
+	  <time datetime="2019-08-06T07:40:00.000Z" itemprop="datePublished">2019-08-06</time>
+	</a>
+</span>
+        
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/%E7%9F%A5%E8%AF%86%E7%82%B9/" rel="tag">知识点</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/08/06/ACM-%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95(%E5%9F%BA%E7%A1%80)/#comments" class="article-comment-link">Comments</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 1.9k(words)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 9(minutes)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h2 id="1-准备知识"><a href="#1-准备知识" class="headerlink" title="1.准备知识"></a>1.准备知识</h2><h3 id="1-1-起手式"><a href="#1-1-起手式" class="headerlink" title="1.1 起手式"></a>1.1 起手式</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">double</span> db;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> db eps = <span class="number">1e-8</span>;</span><br><span class="line"><span class="keyword">const</span> db PI = <span class="built_in">acos</span>(<span class="number">-1.0</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">sgn</span><span class="params">(db x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">fabs</span>(x) &lt; eps) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> x &gt; <span class="number">0</span> ? <span class="number">1</span> : <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    db x = <span class="number">0.4999</span>;</span><br><span class="line">    <span class="keyword">int</span> fx = <span class="built_in">floor</span>(x);<span class="comment">//向下取整</span></span><br><span class="line">    <span class="keyword">int</span> cx = <span class="built_in">ceil</span>(x);<span class="comment">//向上取整</span></span><br><span class="line">    <span class="keyword">int</span> rx = round(x);<span class="comment">//四舍五入</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%f %d %d %d\n"</span>, x, fx, cx, rx);</span><br><span class="line">    <span class="comment">//0.499900 0 1 0</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-点和向量"><a href="#2-点和向量" class="headerlink" title="2. 点和向量"></a>2. 点和向量</h2><h3 id="2-1-点和向量的定义"><a href="#2-1-点和向量的定义" class="headerlink" title="2.1 点和向量的定义"></a>2.1 点和向量的定义</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Point</span> &#123;</span></span><br><span class="line">    db x, y;</span><br><span class="line"></span><br><span class="line">    Point() &#123;&#125;</span><br><span class="line">    </span><br><span class="line">    Point(db _x, db _y) &#123;</span><br><span class="line">        x = _x;</span><br><span class="line">        y = _y;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="2-2-相关运算"><a href="#2-2-相关运算" class="headerlink" title="2.2 相关运算"></a>2.2 相关运算</h3><h4 id="2-2-1-加法"><a href="#2-2-1-加法" class="headerlink" title="2.2.1 加法"></a>2.2.1 加法</h4><ul>
+<li>点和向量相加得到另一个点</li>
+<li>向量和向量相加得到另一个向量</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Point <span class="keyword">operator</span>+(<span class="keyword">const</span> Point &amp;other) <span class="keyword">const</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;x + other.x, y + other.y&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-2-2-减法"><a href="#2-2-2-减法" class="headerlink" title="2.2.2 减法"></a>2.2.2 减法</h4><ul>
+<li>两点差得到一个向量</li>
+<li>$A-B$得到向量$\vec{BA}$</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Point <span class="keyword">operator</span>-(<span class="keyword">const</span> Point &amp;other) <span class="keyword">const</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;x - other.x, y - other.y&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-2-3-乘法"><a href="#2-2-3-乘法" class="headerlink" title="2.2.3 乘法"></a>2.2.3 乘法</h4><ul>
+<li>缩放</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Point <span class="keyword">operator</span>*(<span class="keyword">const</span> db &amp;other) <span class="keyword">const</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;x * other, y * other&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-2-4-除法"><a href="#2-2-4-除法" class="headerlink" title="2.2.4 除法"></a>2.2.4 除法</h4><ul>
+<li>缩放</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Point <span class="keyword">operator</span>/(<span class="keyword">const</span> db &amp;other) <span class="keyword">const</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;x / other, y / other&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-2-5-点积"><a href="#2-2-5-点积" class="headerlink" title="2.2.5 点积"></a>2.2.5 点积</h4><p>$\alpha \cdot \beta  = \vert \alpha \vert  \cdot \vert \beta\vert  \cdot cos\theta$</p>
+<p>几何意义</p>
+<ul>
+<li>若$\alpha$与$\beta$的夹角为锐角，则其点积为正</li>
+<li>若$\alpha$与$\beta$的夹角为钝角，则其点积为负</li>
+<li>若$\alpha$与$\beta$的夹角为支教，则其点积为0</li>
+<li>向量$\alpha$在$\beta$上的投影长度和$\beta$的长度乘积</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">db <span class="keyword">operator</span>*(<span class="keyword">const</span> Point &amp;other) <span class="keyword">const</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> x * other.x + y * other.y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-2-6-叉积"><a href="#2-2-6-叉积" class="headerlink" title="2.2.6 叉积"></a>2.2.6 叉积</h4><p>$\alpha \cdot \beta  = \vert \alpha\vert \cdot \vert \beta\vert  \cdot sin\theta$</p>
+<p>几何意义：</p>
+<ul>
+<li>若$\beta$在$\alpha$的逆时针方向，叉积为正</li>
+<li>若$\beta$在$\alpha$的顺时针方向，叉积为负</li>
+<li>若$\beta$在$\alpha$平行，叉积为0</li>
+<li>向量$\alpha$和向量$\beta$形成的平行四边形的<strong>有向</strong>面积</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">db <span class="keyword">operator</span>^(<span class="keyword">const</span> Point &amp;other) <span class="keyword">const</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> x * other.y - y * other.x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-3-常用函数（成员函数）"><a href="#2-3-常用函数（成员函数）" class="headerlink" title="2.3 常用函数（成员函数）"></a>2.3 常用函数（成员函数）</h3><h4 id="2-3-1-两点距离"><a href="#2-3-1-两点距离" class="headerlink" title="2.3.1 两点距离"></a>2.3.1 两点距离</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function">db <span class="title">distance</span><span class="params">(Point p)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> hypot(x - p.x, y - p.y);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-3-2-逆时针旋转90度"><a href="#2-3-2-逆时针旋转90度" class="headerlink" title="2.3.2 逆时针旋转90度"></a>2.3.2 逆时针旋转90度</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function">Point <span class="title">rotleft</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;-y, x&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-3-3-顺时针旋转90度"><a href="#2-3-3-顺时针旋转90度" class="headerlink" title="2.3.3 顺时针旋转90度"></a>2.3.3 顺时针旋转90度</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function">Point <span class="title">roright</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;y, -x&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-3-4-绕着点P逆时针旋转angle"><a href="#2-3-4-绕着点P逆时针旋转angle" class="headerlink" title="2.3.4 绕着点P逆时针旋转angle"></a>2.3.4 绕着点P逆时针旋转angle</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function">Point <span class="title">rotate</span><span class="params">(Point p, db angle)</span> </span>&#123;</span><br><span class="line">    Point v = (*<span class="keyword">this</span>) - p;</span><br><span class="line">    db c = <span class="built_in">cos</span>(angle), s = <span class="built_in">sin</span>(angle);</span><br><span class="line">    <span class="keyword">return</span> &#123;p.x + v.x * c - v.y * s, p.y + v.x * s + v.y * c&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-3-5-ToLeftTest-函数"><a href="#2-3-5-ToLeftTest-函数" class="headerlink" title="2.3.5 ToLeftTest 函数"></a>2.3.5 ToLeftTest 函数</h4><p>判断$\vec{bc}$是不是想两$\vec{ab}$的逆时针方向旋转 凸包</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">ToLeftTest</span><span class="params">(Point a, Point b, Point c)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> ((b - a) ^ (c - b)) &gt; <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-点和线"><a href="#3-点和线" class="headerlink" title="3. 点和线"></a>3. 点和线</h2><h3 id="3-1-定义"><a href="#3-1-定义" class="headerlink" title="3.1 定义"></a>3.1 定义</h3><h4 id="3-1-1直线定义"><a href="#3-1-1直线定义" class="headerlink" title="3.1.1直线定义"></a>3.1.1直线定义</h4><p>直线定义一般由三种形式</p>
+<ul>
+<li>$ax+by+c=0$一般式</li>
+<li>$x_0+y_0+v_xt+v_yt=0$点向式</li>
+<li>$y=kx+b$斜截式</li>
+</ul>
+<h4 id="3-1-2-点向式"><a href="#3-1-2-点向式" class="headerlink" title="3.1.2 点向式"></a>3.1.2 点向式</h4><script type="math/tex; mode=display">
+P = P_o+vt</script><p>用一个点加一个线段表示</p>
+<h3 id="3-1-2-构造方法"><a href="#3-1-2-构造方法" class="headerlink" title="3.1.2 构造方法"></a>3.1.2 构造方法</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Line</span> &#123;</span></span><br><span class="line">    Point s, e;</span><br><span class="line"></span><br><span class="line">    Line() &#123;&#125;</span><br><span class="line">    </span><br><span class="line">    Line(Point _s, Point _e) &#123;</span><br><span class="line">        s = _s;</span><br><span class="line">        e = _e;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    Line(Point p, db angle) &#123;</span><br><span class="line">        s = p;</span><br><span class="line">        <span class="keyword">if</span> (sgn(angle - PI / <span class="number">2</span>) == <span class="number">0</span>) &#123;</span><br><span class="line">            e = (s + Point(<span class="number">0</span>, <span class="number">1</span>));</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            e = (s + Point(<span class="number">1</span>, <span class="built_in">tan</span>(angle)));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//ax + by + c = 0</span></span><br><span class="line">    Line(db a, db b, db c) &#123;</span><br><span class="line">        <span class="keyword">if</span> (sgn(a) == <span class="number">0</span>) &#123;</span><br><span class="line">            s = Point(<span class="number">0</span>, -c / b);</span><br><span class="line">            e = Point(<span class="number">1</span>, -c / b);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (sgn(b) == <span class="number">0</span>) &#123;</span><br><span class="line">            s = Point(-c / a, <span class="number">0</span>);</span><br><span class="line">            e = Point(-c / a, <span class="number">1</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            s = Point(<span class="number">0</span>, -c / b);</span><br><span class="line">            e = Point(<span class="number">1</span>, (-c - a) / b);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="3-1-2-常用函数"><a href="#3-1-2-常用函数" class="headerlink" title="3.1.2 常用函数"></a>3.1.2 常用函数</h4><h5 id="3-1-2-1-点和直线的关系"><a href="#3-1-2-1-点和直线的关系" class="headerlink" title="3.1.2.1 点和直线的关系"></a>3.1.2.1 点和直线的关系</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//点和直线关系</span></span><br><span class="line"><span class="comment">//1 在左侧</span></span><br><span class="line"><span class="comment">//2 在右侧</span></span><br><span class="line"><span class="comment">//3 在直线上</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">relation</span><span class="params">(Point p)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> c = sgn((p - s) ^ (e - s));</span><br><span class="line">    <span class="keyword">if</span> (c &lt; <span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (c &gt; <span class="number">0</span>) <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">3</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="3-1-2-2-点在线段上的判断"><a href="#3-1-2-2-点在线段上的判断" class="headerlink" title="3.1.2.2 点在线段上的判断"></a>3.1.2.2 点在线段上的判断</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">pointonseg</span><span class="params">(Point p)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> sgn(((p - s) ^ (e - s))) == <span class="number">0</span> &amp;&amp; sgn((p - s) * (p - e)) &lt;= <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="3-1-2-2-向量平行判断"><a href="#3-1-2-2-向量平行判断" class="headerlink" title="3.1.2.2 向量平行判断"></a>3.1.2.2 向量平行判断</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">parallel</span><span class="params">(Line v)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> sgn((e - s) ^ (v.e - v.s)) == <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="3-1-2-3-两线段相交判断"><a href="#3-1-2-3-两线段相交判断" class="headerlink" title="3.1.2.3 两线段相交判断"></a>3.1.2.3 两线段相交判断</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//2 规范相交</span></span><br><span class="line"><span class="comment">//1 非规范相交</span></span><br><span class="line"><span class="comment">//0 不相交</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">segcrossseg</span><span class="params">(Line v)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> d1 = sgn((e - s) ^ (v.s - s));</span><br><span class="line">    <span class="keyword">int</span> d2 = sgn((e - s) ^ (v.e - s));</span><br><span class="line">    <span class="keyword">int</span> d3 = sgn((v.e - v.s) ^ (s - v.s));</span><br><span class="line">    <span class="keyword">int</span> d4 = sgn((v.e - v.s) ^ (e - v.s));</span><br><span class="line">    <span class="keyword">if</span> ((d1 ^ d2) == <span class="number">-2</span> &amp;&amp; (d3 ^ d4) == <span class="number">-2</span>) <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">return</span> ((d1 == <span class="number">0</span> &amp;&amp; sgn((v.s - s) * (v.s - e)) &lt;= <span class="number">0</span>) ||</span><br><span class="line">            (d2 == <span class="number">0</span> &amp;&amp; sgn((v.e - s) * (v.e - e)) &lt;= <span class="number">0</span>) ||</span><br><span class="line">            (d3 == <span class="number">0</span> &amp;&amp; sgn((s - v.s) * (s - v.e)) &lt;= <span class="number">0</span>) ||</span><br><span class="line">            (d4 == <span class="number">0</span> &amp;&amp; sgn((e - v.s) * (e - v.e))) &lt;= <span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="3-1-2-4-直线和线段相交判断"><a href="#3-1-2-4-直线和线段相交判断" class="headerlink" title="3.1.2.4 直线和线段相交判断"></a>3.1.2.4 直线和线段相交判断</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//-*this line -v seg</span></span><br><span class="line"><span class="comment">//2 规范相交</span></span><br><span class="line"><span class="comment">//1 非规范相交</span></span><br><span class="line"><span class="comment">//0 不相交</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">linecrossseg</span><span class="params">(Line v)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> d1 = sgn((e - s) ^ (v.s - s));</span><br><span class="line">    <span class="keyword">int</span> d2 = sgn((e - s) ^ (v.e - s));</span><br><span class="line">    <span class="keyword">if</span> ((d1 ^ d2) == <span class="number">-2</span>) <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">return</span> (d1 == <span class="number">0</span> || d2 == <span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="3-1-2-5-两直线关系"><a href="#3-1-2-5-两直线关系" class="headerlink" title="3.1.2.5 两直线关系"></a>3.1.2.5 两直线关系</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//0 平行</span></span><br><span class="line"><span class="comment">//1 重合</span></span><br><span class="line"><span class="comment">//2 相交</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">linecrossline</span><span class="params">(Line v)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> ((*<span class="keyword">this</span>).parallel(v)) &#123;</span><br><span class="line">        <span class="keyword">return</span> v.relation(s) == <span class="number">3</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="3-1-2-6-两直线交点"><a href="#3-1-2-6-两直线交点" class="headerlink" title="3.1.2.6 两直线交点"></a>3.1.2.6 两直线交点</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function">Point <span class="title">crosspoint</span><span class="params">(Line v)</span> </span>&#123;</span><br><span class="line">    db a1 = (v.e - v.s) ^(s - v.s);</span><br><span class="line">    db a2 = (v.e - v.s) ^(e - v.s);</span><br><span class="line">    <span class="keyword">return</span> &#123;(s.x * a2 - e.x * a1) / (a1 - a1), (s.y * a2 - e.y * a1) / (a2 - a1)&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="3-1-2-7-点到直线的距离"><a href="#3-1-2-7-点到直线的距离" class="headerlink" title="3.1.2.7 点到直线的距离"></a>3.1.2.7 点到直线的距离</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function">db <span class="title">dispointtoline</span><span class="params">(Point p)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">fabs</span>((p - s) ^ (e - s)) / length();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="3-1-2-8-点到线段的距离"><a href="#3-1-2-8-点到线段的距离" class="headerlink" title="3.1.2.8 点到线段的距离"></a>3.1.2.8 点到线段的距离</h6><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function">db <span class="title">dispointtoseg</span><span class="params">(Point p)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (sgn((p - s) * (e - s)) &lt; <span class="number">0</span> || sgn((p - e) * (s - e)) &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">min</span>(p.distance(e), p.distance(s));</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> dispointtoline(p);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="3-1-2-9-线段到线段距离"><a href="#3-1-2-9-线段到线段距离" class="headerlink" title="3.1.2.9 线段到线段距离"></a>3.1.2.9 线段到线段距离</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function">db <span class="title">dissegtoseg</span><span class="params">(Line v)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">min</span>(<span class="built_in">min</span>(dispointtoseg(v.s), dispointtoseg(v.e)), <span class="built_in">min</span>(v.dispointtoseg(s), v.dispointtoseg(e)));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="3-1-2-10-点在直线上的投影"><a href="#3-1-2-10-点在直线上的投影" class="headerlink" title="3.1.2.10 点在直线上的投影"></a>3.1.2.10 点在直线上的投影</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function">Point <span class="title">lineprog</span><span class="params">(Point p)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> s + (((e - s) * ((e - s) * (p - s))) / ((e - s).len2()));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="3-1-2-11-点关于直线的对称点"><a href="#3-1-2-11-点关于直线的对称点" class="headerlink" title="3.1.2.11 点关于直线的对称点"></a>3.1.2.11 点关于直线的对称点</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function">Point <span class="title">symmetrypoint</span><span class="params">(Point p)</span> </span>&#123;</span><br><span class="line">    Point q = lineprog(p);</span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="number">2</span> * q.x - p.x, <span class="number">2</span> * q.y - p.y&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="4-多边形"><a href="#4-多边形" class="headerlink" title="4. 多边形"></a>4. 多边形</h2><h3 id="4-1-三角形"><a href="#4-1-三角形" class="headerlink" title="4.1 三角形"></a>4.1 三角形</h3><h4 id="4-1-1-三角形面积"><a href="#4-1-1-三角形面积" class="headerlink" title="4.1.1 三角形面积"></a>4.1.1 三角形面积</h4><ul>
+<li><p>利用两条边叉积</p>
+</li>
+<li><p>海伦公式</p>
+<script type="math/tex; mode=display">
+S = \sqrt{p(p-a)(p-b)(p-c)}, p=\frac{a+b+c}{2}</script></li>
+<li><p>$S = \frac{absinC}{2}$</p>
+</li>
+</ul>
+<h3 id="4-2-其他多边形"><a href="#4-2-其他多边形" class="headerlink" title="4.2 其他多边形"></a>4.2 其他多边形</h3><h4 id="4-2-1-常用函数"><a href="#4-2-1-常用函数" class="headerlink" title="4.2.1 常用函数"></a>4.2.1 常用函数</h4><h5 id="4-2-1-1-点和多边形的关系"><a href="#4-2-1-1-点和多边形的关系" class="headerlink" title="4.2.1.1 点和多边形的关系"></a>4.2.1.1 点和多边形的关系</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 3 点上</span></span><br><span class="line"><span class="comment">// 2 边上</span></span><br><span class="line"><span class="comment">// 1 内部</span></span><br><span class="line"><span class="comment">// 0 外部</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">relationpoint</span><span class="params">(Point q)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (p[i] == q)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">3</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    getline();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (l[i].pointonseg(q)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        <span class="keyword">int</span> j = (i + <span class="number">1</span>) % n;</span><br><span class="line">        <span class="keyword">int</span> k = sgn((q - p[j]) ^ (p[i] - p[j]));</span><br><span class="line">        <span class="keyword">int</span> u = sgn(p[i].y - q.y);</span><br><span class="line">        <span class="keyword">int</span> v = sgn(p[j].y - q.y);</span><br><span class="line">        <span class="keyword">if</span> (k &gt; <span class="number">0</span> &amp;&amp; u &lt; <span class="number">0</span> &amp;&amp; v &gt;= <span class="number">0</span>) cnt++;</span><br><span class="line">        <span class="keyword">if</span> (k &lt; <span class="number">0</span> &amp;&amp; v &lt; <span class="number">0</span> &amp;&amp; u &gt;= <span class="number">0</span>) cnt++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> cnt != <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="4-2-1-2-获取周长"><a href="#4-2-1-2-获取周长" class="headerlink" title="4.2.1.2 获取周长"></a>4.2.1.2 获取周长</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function">db <span class="title">getcircumferenct</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    db sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        sum += p[i].distance(p[(i + <span class="number">1</span>) % n]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="4-2-1-3-获取面积"><a href="#4-2-1-3-获取面积" class="headerlink" title="4.2.1.3 获取面积"></a>4.2.1.3 获取面积</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function">db <span class="title">getarea</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    db sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">        sum += (p[i] ^ (p[(i + <span class="number">1</span>) % n]));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">fabs</span>(sum / <span class="number">2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="4-2-1-4-获取重心"><a href="#4-2-1-4-获取重心" class="headerlink" title="4.2.1.4 获取重心"></a>4.2.1.4 获取重心</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function">Point <span class="title">getbarycentre</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Point ret = &#123;<span class="number">0</span>, <span class="number">0</span>&#125;;</span><br><span class="line">    db area = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n - <span class="number">1</span>; ++i) &#123;</span><br><span class="line">        db tmp = (p[i] - p[<span class="number">0</span>]) ^(p[i + <span class="number">1</span>] - p[<span class="number">0</span>]);</span><br><span class="line">        <span class="keyword">if</span> (sgn(tmp) == <span class="number">0</span>) <span class="keyword">continue</span>;</span><br><span class="line">        area += tmp;</span><br><span class="line">        ret.x += (p[<span class="number">0</span>].x + p[i].x + p[i + <span class="number">1</span>].x) / <span class="number">3</span> * tmp;</span><br><span class="line">        ret.y = (p[<span class="number">0</span>].y + p[i].y + p[i + <span class="number">1</span>].y) / <span class="number">3</span> * tmp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (sgn(area)) ret = ret / area;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-3-Pick定理"><a href="#4-3-Pick定理" class="headerlink" title="4.3 Pick定理"></a>4.3 Pick定理</h3><h4 id="4-3-1-内容"><a href="#4-3-1-内容" class="headerlink" title="4.3.1 内容"></a>4.3.1 内容</h4><p>皮克定理是指一个计算点阵中顶点在格点上的多边形面积公式该公式可以表示为</p>
+<script type="math/tex; mode=display">
+2S = 2a+b-2</script><p>其中$a$表示多边形内部点数，$b$表示多边形边界上点数，$S$表示多边形面积</p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://gitee.com/Hsueh37/blog/2019/08/06/ACM-%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95(%E5%9F%BA%E7%A1%80)/" title="ACM-计算几何(基础)" target="_blank" rel="external">https://gitee.com/Hsueh37/blog/2019/08/06/ACM-%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95(%E5%9F%BA%E7%A1%80)/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/Hsueh-Xue" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/Hsueh-Xue" target="_blank"><span class="text-dark">Hsueh-</span><small class="ml-1x">HZNUer &amp; Student</small></a></h3>
+        <div>HZNUer</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2019/08/07/%E6%94%AF%E9%85%8D%E6%A0%91/" title="支配树"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2019/08/06/Multi-University-Training-Contest-5/" title="Multi-University-Training-Contest-5"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>$</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>Maybe you could buy me a cup of coffee.</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> alipay</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> wechat payment</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+    
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/Hsueh-Xue" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://weibo.com/u/5609636028" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+        
+        <div class="publishby">
+            <!--        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.-->
+        </div>
+    </div>
+    <div>
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+        Total page views of this site <span id="busuanzi_value_site_pv"></span> times&nbsp&nbsp&nbsp
+        Number of visitors <span id="busuanzi_value_site_uv"></span> person-time
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+   window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: 'ioLu7jefddxvht3Plek4BfO3-gzGzoHsz',
+    appKey: 'LJYU8kVQU5t0rJWk9ksB6m5G',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+<script type="text/javascript" color="0,0,0" opacity='0.8' zIndex="-2" count="199"
+        src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
