@@ -25,16 +25,16 @@
 <meta property="og:site_name" content="Hsueh&#39;s Blog">
 <meta property="og:description" content="网络流拓展">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://hsueh37.gitee.io/upload/%E7%BD%91%E7%BB%9C%E6%B5%81%E6%8B%93%E5%B1%95/1.png">
-<meta property="og:image" content="http://hsueh37.gitee.io/upload/%E7%BD%91%E7%BB%9C%E6%B5%81%E6%8B%93%E5%B1%95/2.png">
-<meta property="og:image" content="http://hsueh37.gitee.io/upload/%E7%BD%91%E7%BB%9C%E6%B5%81%E6%8B%93%E5%B1%95/3.png">
-<meta property="og:image" content="http://hsueh37.gitee.io/upload/%E7%BD%91%E7%BB%9C%E6%B5%81%E6%8B%93%E5%B1%95/4.png">
+<meta property="og:image" content="http://hsueh37.gitee.io/git/2019/11/05/%E7%BD%91%E7%BB%9C%E6%B5%81%E6%8B%93%E5%B1%95/picture/%E7%BD%91%E7%BB%9C%E6%B5%81%E6%8B%93%E5%B1%95/1.png">
+<meta property="og:image" content="http://hsueh37.gitee.io/git/2019/11/05/%E7%BD%91%E7%BB%9C%E6%B5%81%E6%8B%93%E5%B1%95/picture/%E7%BD%91%E7%BB%9C%E6%B5%81%E6%8B%93%E5%B1%95/2.png">
+<meta property="og:image" content="http://hsueh37.gitee.io/git/2019/11/05/%E7%BD%91%E7%BB%9C%E6%B5%81%E6%8B%93%E5%B1%95/picture/%E7%BD%91%E7%BB%9C%E6%B5%81%E6%8B%93%E5%B1%95/3.png">
+<meta property="og:image" content="http://hsueh37.gitee.io/git/2019/11/05/%E7%BD%91%E7%BB%9C%E6%B5%81%E6%8B%93%E5%B1%95/picture/%E7%BD%91%E7%BB%9C%E6%B5%81%E6%8B%93%E5%B1%95/4.png">
 <meta property="article:published_time" content="2019-11-05T14:10:00.000Z">
-<meta property="article:modified_time" content="2020-04-28T09:02:42.278Z">
+<meta property="article:modified_time" content="2020-11-30T04:57:07.592Z">
 <meta property="article:author" content="Hsueh-">
 <meta property="article:tag" content="知识点">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://hsueh37.gitee.io/upload/%E7%BD%91%E7%BB%9C%E6%B5%81%E6%8B%93%E5%B1%95/1.png">
+<meta name="twitter:image" content="http://hsueh37.gitee.io/git/2019/11/05/%E7%BD%91%E7%BB%9C%E6%B5%81%E6%8B%93%E5%B1%95/picture/%E7%BD%91%E7%BB%9C%E6%B5%81%E6%8B%93%E5%B1%95/1.png">
   <!-- Canonical links -->
   <link rel="canonical" href="http://hsueh37.gitee.io/git/2019/11/05/%E7%BD%91%E7%BB%9C%E6%B5%81%E6%8B%93%E5%B1%95/index.html">
   
@@ -395,16 +395,16 @@ f(S,t)=\sum f(u,v) | u\in S, v \in T</script><p>其中任意一个割的净流$f
 <p>此时$(S,T)$构成一个割$S,T$。且对于任意的$u \in S, v \in T$有$f(u,v)=c(u,v)$。若$f(u,v)<c(u,v)$则由$Gf(u,v)>0$，$s$可以到达$v$，与$v$属于$T$矛盾</p>
 <p>$3 \Rightarrow 1$</p>
 <p>由于$f$的上界是最小割，当$f$到达割的容量的时候，显然达到了最大值，因此$f$是最大流</p>
-<h2 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h2><h3 id="二分图多重匹配"><a href="#二分图多重匹配" class="headerlink" title="二分图多重匹配"></a>二分图多重匹配</h3><p><img src="/upload\网络流拓展\1.png" alt="1"></p>
+<h2 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h2><h3 id="二分图多重匹配"><a href="#二分图多重匹配" class="headerlink" title="二分图多重匹配"></a>二分图多重匹配</h3><p><img src="./picture\网络流拓展\1.png" alt="1"></p>
 <p>$S$连向$A$，流量为$A$中点可以连接的数量，$A$连向$B$表示可以匹配，$B$连向$T$，流量为可以连接的数量</p>
 <h3 id="最小路径覆盖"><a href="#最小路径覆盖" class="headerlink" title="最小路径覆盖"></a>最小路径覆盖</h3><h4 id="定义-2"><a href="#定义-2" class="headerlink" title="定义"></a>定义</h4><p>给定一个有向无环图，用最少的路径数量去保证所有点都被覆盖住</p>
-<p><img src="/upload\网络流拓展\2.png" alt="2"></p>
+<p><img src="./picture\网络流拓展\2.png" alt="2"></p>
 <p>对于每条路径，起点入度都为$0$，终点的出度都为$0$，中间节点的出入读都为$0$</p>
 <p>每个点最多有一个前驱，同时最多有一个后继节点</p>
-<h4 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h4><p><img src="/upload\网络流拓展\3.png" alt="3"></p>
+<h4 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h4><p><img src="./picture\网络流拓展\3.png" alt="3"></p>
 <p>将每个点$u$拆成$u,u’$，其中$S$连向每个$u$，每个$u’$连向$T$，对于每条边$(u,v)$，建立边$u\rightarrow v’$，跑网络流，最终答案为点数$-$最大流</p>
 <h3 id="最大权闭合子图"><a href="#最大权闭合子图" class="headerlink" title="最大权闭合子图"></a>最大权闭合子图</h3><h4 id="定义-3"><a href="#定义-3" class="headerlink" title="定义"></a>定义</h4><p>给定一有向图，从中选择一些点组成点集$V$。对于每个$V$中的节点，其后续节点仍然需要在$V$中。最权值最大的子图</p>
-<h4 id="做法-1"><a href="#做法-1" class="headerlink" title="做法"></a>做法</h4><p><img src="/upload\网络流拓展\4.png" alt="4"></p>
+<h4 id="做法-1"><a href="#做法-1" class="headerlink" title="做法"></a>做法</h4><p><img src="./picture\网络流拓展\4.png" alt="4"></p>
 <p>首先建立源点$s$和汇点$t$，将源点$s$和所有权值为正的点相连，流量为权值，将所有权值为负的点和汇点$t$相连，流量为权值的绝对值，权值为$0$的点不做选择，同时将原来的边的流量设置为无穷大，答案为所有正权值和$-$最小割</p>
 <h4 id="引理"><a href="#引理" class="headerlink" title="引理"></a>引理</h4><ul>
 <li>最小割一定是简单割<ul>
