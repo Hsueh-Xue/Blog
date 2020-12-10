@@ -403,8 +403,8 @@ f(x)=
              x-1 \quad & otherwise
              \end{array}  
 \right.  
-\end{equation}</script><p>定义$path{x}$为通过一系列计算得到的结果</p>
-<p>求最大的$y$满足$|{x|1\leq x \leq n, y \in path{x}|\geq k$</p>
+\end{equation}</script><p>定义$path\{x\}$为通过一系列计算得到的结果</p>
+<p>求最大的$y$满足$|\{x|1\leq x \leq n, y \in path\{x\}|\geq k$</p>
 <p>思路：</p>
 <p>很显然这是一棵树</p>
 <p>其中$2x$的父亲是$x$，$2x+1$的父亲是$2x$</p>
@@ -642,20 +642,5 @@ f(x)=
 
 <script type="text/javascript" color="0,0,0" opacity='0.8' zIndex="-2" count="199"
         src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>
