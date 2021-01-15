@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>Latex命令 | Hsueh</title>
+  <meta name="description" content="Latex命令">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Latex命令">
+<meta property="og:url" content="https://hsueh37.gitee.io/blog/2019/07/18/Latex/index.html">
+<meta property="og:site_name" content="Hsueh&#39;s Blog">
+<meta property="og:description" content="Latex命令">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-07-18T05:32:20.000Z">
+<meta property="article:modified_time" content="2020-04-28T09:02:42.268Z">
+<meta property="article:author" content="Hsueh-">
+<meta property="article:tag" content="Latex">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://hsueh37.gitee.io/blog/2019/07/18/Latex/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Hsueh&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/Hsueh-Xue" target="_blank">
+          <img class="img-circle img-rotate" src="/blog/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Hsueh-</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">HZNUer &amp; Student</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Hangzhou, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/blog/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/blog/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/blog/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/blog/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">Repository</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/blog/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">Links</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/blog/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">About</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/Hsueh-Xue" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://weibo.com/u/5609636028" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p><del>退役</del>ACMer</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/2019%E7%89%9B%E5%AE%A2%E5%A4%9A%E6%A0%A1/" rel="tag">2019牛客多校</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/ACM/" rel="tag">ACM</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Codeforces/" rel="tag">Codeforces</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/HDU/" rel="tag">HDU</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/HDU%E5%A4%9A%E6%A0%A1/" rel="tag">HDU多校</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/HUD%E5%A4%9A%E6%A0%A1/" rel="tag">HUD多校</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Latex/" rel="tag">Latex</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Regional/" rel="tag">Regional</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/nowcoder/" rel="tag">nowcoder</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/online/" rel="tag">online</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/python-tools/" rel="tag">python tools</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="tag">服务器</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E7%9F%A5%E8%AF%86%E7%82%B9/" rel="tag">知识点</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E7%B3%BB%E7%BB%9F/" rel="tag">系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/%E8%AE%B2%E8%AF%BE/" rel="tag">讲课</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-body tagcloud">
+      <a href="/blog/tags/2019%E7%89%9B%E5%AE%A2%E5%A4%9A%E6%A0%A1/" style="font-size: 13.8px;">2019牛客多校</a> <a href="/blog/tags/ACM/" style="font-size: 13.6px;">ACM</a> <a href="/blog/tags/Codeforces/" style="font-size: 13.8px;">Codeforces</a> <a href="/blog/tags/HDU/" style="font-size: 13px;">HDU</a> <a href="/blog/tags/HDU%E5%A4%9A%E6%A0%A1/" style="font-size: 13.6px;">HDU多校</a> <a href="/blog/tags/HUD%E5%A4%9A%E6%A0%A1/" style="font-size: 13.2px;">HUD多校</a> <a href="/blog/tags/Latex/" style="font-size: 13px;">Latex</a> <a href="/blog/tags/Regional/" style="font-size: 13px;">Regional</a> <a href="/blog/tags/nowcoder/" style="font-size: 13px;">nowcoder</a> <a href="/blog/tags/online/" style="font-size: 13.4px;">online</a> <a href="/blog/tags/python-tools/" style="font-size: 13px;">python tools</a> <a href="/blog/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 13.4px;">服务器</a> <a href="/blog/tags/%E7%9F%A5%E8%AF%86%E7%82%B9/" style="font-size: 14px;">知识点</a> <a href="/blog/tags/%E7%B3%BB%E7%BB%9F/" style="font-size: 13px;">系统</a> <a href="/blog/tags/%E8%AE%B2%E8%AF%BE/" style="font-size: 13.2px;">讲课</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/11/">November 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/10/">October 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/05/">May 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/03/">March 2020</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/02/">February 2020</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/11/">November 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/10/">October 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/09/">September 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/08/">August 2019</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/07/">July 2019</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/02/">February 2019</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/blog/2020/12/01/Domjudge%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/" class="title">Domjudge安装记录</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-12-01T12:51:46.000Z" itemprop="datePublished">2020-12-01</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/blog/2020/11/30/2020%E5%B9%B4CCCC-%E6%80%BB%E5%86%B3%E8%B5%9B/" class="title">2020年CCCC-总决赛</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-11-30T04:00:00.000Z" itemprop="datePublished">2020-11-30</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/blog/2020/10/10/%E4%B8%AA%E4%BA%BA%E8%B6%B3%E8%BF%B9%E5%9B%BE%E7%BB%98%E5%88%B6/" class="title">个人足迹图绘制</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-10-10T01:40:00.000Z" itemprop="datePublished">2020-10-10</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/blog/2020/05/06/Ubuntu%E9%83%A8%E7%BD%B2django/" class="title">Ubuntu部署django</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-05-06T00:51:46.000Z" itemprop="datePublished">2020-05-06</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/blog/2020/03/20/v2rayN%E6%90%AD%E5%BB%BA/" class="title">v2rayN搭建</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-03-20T14:54:48.000Z" itemprop="datePublished">2020-03-20</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-Latex" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Latex命令
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/blog/2019/07/18/Latex/" class="article-date">
+	  <time datetime="2019-07-18T05:32:20.000Z" itemprop="datePublished">2019-07-18</time>
+	</a>
+</span>
+        
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/blog/tags/Latex/" rel="tag">Latex</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/blog/2019/07/18/Latex/#comments" class="article-comment-link">Comments</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 256(words)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 1(minutes)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h2 id="希腊字母"><a href="#希腊字母" class="headerlink" title="希腊字母"></a>希腊字母</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>latex命令</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\alpha</td>
+<td>$\alpha$</td>
+</tr>
+<tr>
+<td>\beta</td>
+<td>$\beta$</td>
+</tr>
+<tr>
+<td>\gamma</td>
+<td>$\gamma$</td>
+</tr>
+<tr>
+<td>\Delta, \delta</td>
+<td>$\Delta, \delta$</td>
+</tr>
+<tr>
+<td>\epsilon, \varepsilon</td>
+<td>$\epsilon, \varepsilon$</td>
+</tr>
+<tr>
+<td>\zeta</td>
+<td>$\zeta$</td>
+</tr>
+<tr>
+<td>\eta</td>
+<td>$\eta$</td>
+</tr>
+<tr>
+<td>\theta,\vartheta</td>
+<td>$\theta,\vartheta$</td>
+</tr>
+<tr>
+<td>\iota</td>
+<td>$\iota$</td>
+</tr>
+<tr>
+<td>\kappa</td>
+<td>$\kappa$</td>
+</tr>
+<tr>
+<td>\lambda</td>
+<td>$\lambda$</td>
+</tr>
+<tr>
+<td>\mu</td>
+<td>$\mu$</td>
+</tr>
+<tr>
+<td>\nu</td>
+<td>$\nu$</td>
+</tr>
+<tr>
+<td>\Xi,\xi</td>
+<td>$\Xi,\xi$</td>
+</tr>
+<tr>
+<td>\pi, \varpi</td>
+<td>$\pi, \varpi$</td>
+</tr>
+<tr>
+<td>\rho,\varrho</td>
+<td>$\rho,\varrho$</td>
+</tr>
+<tr>
+<td>\sum,\sigma,\varsigma</td>
+<td>$\sum,\sigma,\varsigma$</td>
+</tr>
+<tr>
+<td>\tau</td>
+<td>$\tau$</td>
+</tr>
+<tr>
+<td>\upsilon</td>
+<td>$\upsilon$</td>
+</tr>
+<tr>
+<td>\phi,\varphi</td>
+<td>$\phi,\varphi$</td>
+</tr>
+<tr>
+<td>\psi</td>
+<td>$\psi$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="二元关系符号"><a href="#二元关系符号" class="headerlink" title="二元关系符号"></a>二元关系符号</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>latex命令</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\leq,\le</td>
+<td>$\leq,\le$</td>
+</tr>
+<tr>
+<td>\in</td>
+<td>$\in$</td>
+</tr>
+<tr>
+<td>\mid</td>
+<td>$\mid$</td>
+</tr>
+<tr>
+<td>\geq,\ge</td>
+<td>$\geq,\ge$</td>
+</tr>
+<tr>
+<td>\supset</td>
+<td>$\supset$</td>
+</tr>
+<tr>
+<td>\parallel</td>
+<td>$\parallel$</td>
+</tr>
+<tr>
+<td>\notin</td>
+<td>$\notin$</td>
+</tr>
+<tr>
+<td>\equiv</td>
+<td>$\equiv$</td>
+</tr>
+<tr>
+<td>\sim</td>
+<td>$\sim$</td>
+</tr>
+<tr>
+<td>\approx</td>
+<td>$\approx$</td>
+</tr>
+<tr>
+<td>\cong</td>
+<td>$\cong$</td>
+</tr>
+<tr>
+<td>\bowtie</td>
+<td>$\bowtie$</td>
+</tr>
+<tr>
+<td>\perp</td>
+<td>$\perp$</td>
+</tr>
+<tr>
+<td>\neq,\ne</td>
+<td>$\neq,\ne$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="二元运算"><a href="#二元运算" class="headerlink" title="二元运算"></a>二元运算</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>latex命令</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\pm</td>
+<td>$\pm$</td>
+</tr>
+<tr>
+<td>\cdot</td>
+<td>$\cdot$</td>
+</tr>
+<tr>
+<td>\times</td>
+<td>$\times$</td>
+</tr>
+<tr>
+<td>\cup</td>
+<td>$\cup$</td>
+</tr>
+<tr>
+<td>\oplus</td>
+<td>$\oplus$</td>
+</tr>
+<tr>
+<td>\odot</td>
+<td>$\odot$</td>
+</tr>
+<tr>
+<td>\otimes</td>
+<td>$\otimes$</td>
+</tr>
+<tr>
+<td>\wedge,\land</td>
+<td>$\wedge,\land$</td>
+</tr>
+<tr>
+<td>\star</td>
+<td>$\star$</td>
+</tr>
+<tr>
+<td>\ast</td>
+<td>$\ast$</td>
+</tr>
+<tr>
+<td>\sum</td>
+<td>$\sum $</td>
+</tr>
+<tr>
+<td>\prod</td>
+<td>$\prod$</td>
+</tr>
+<tr>
+<td>\int</td>
+<td>$\int$</td>
+</tr>
+<tr>
+<td>\bigcup</td>
+<td>$\bigcup$</td>
+</tr>
+<tr>
+<td>\bigcap</td>
+<td>$\bigcap$</td>
+</tr>
+<tr>
+<td>\oint</td>
+<td>$\oint$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="箭头"><a href="#箭头" class="headerlink" title="箭头"></a>箭头</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>latex命令</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\leftarrow,\gets</td>
+<td>$\leftarrow,\gets$</td>
+</tr>
+<tr>
+<td>\rightarrow,\to</td>
+<td>$\rightarrow,\to$</td>
+</tr>
+<tr>
+<td>\leftrightarrow</td>
+<td>$\leftrightarrow$</td>
+</tr>
+<tr>
+<td>\Leftarrow</td>
+<td>$\Leftarrow$</td>
+</tr>
+<tr>
+<td>\Rightarrow</td>
+<td>$\Rightarrow$</td>
+</tr>
+<tr>
+<td>\Leftrightarrow</td>
+<td>$\Leftrightarrow$</td>
+</tr>
+<tr>
+<td>\rightleftharpoons</td>
+<td>$\rightleftharpoons$</td>
+</tr>
+<tr>
+<td>\hookleftarrow, \hookrightarrow</td>
+<td>$\hookleftarrow, \hookrightarrow$</td>
+</tr>
+<tr>
+<td>\Longleftarrow,\Longrightarrow</td>
+<td>$\Longleftarrow,\Longrightarrow$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="微分"><a href="#微分" class="headerlink" title="微分"></a>微分</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>latex命令</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\nabla</td>
+<td>$\nabla$</td>
+</tr>
+<tr>
+<td>\partial x</td>
+<td>$\partial x$</td>
+</tr>
+<tr>
+<td>\mathrm{d}x</td>
+<td>$\mathrm{d}x$</td>
+</tr>
+<tr>
+<td>\dot x</td>
+<td>$\dot x$</td>
+</tr>
+<tr>
+<td>\ddot y</td>
+<td>$\ddot y$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="几何"><a href="#几何" class="headerlink" title="几何"></a>几何</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>latex命令</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\Delta,\triangle</td>
+<td>$\Delta,\triangle$</td>
+</tr>
+<tr>
+<td>\vec{c}</td>
+<td>$\vec{c}$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="分数、矩阵和多行列式"><a href="#分数、矩阵和多行列式" class="headerlink" title="分数、矩阵和多行列式"></a>分数、矩阵和多行列式</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>latex命令</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\frac{2}{4}=0.5</td>
+<td>$\frac{2}{4}=0.5$</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="https://hsueh37.gitee.io/blog/2019/07/18/Latex/" title="Latex命令" target="_blank" rel="external">https://hsueh37.gitee.io/blog/2019/07/18/Latex/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/Hsueh-Xue" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/blog/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/Hsueh-Xue" target="_blank"><span class="text-dark">Hsueh-</span><small class="ml-1x">HZNUer &amp; Student</small></a></h3>
+        <div>HZNUer</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/blog/2019/07/18/2019%E7%89%9B%E5%AE%A2%E6%9A%91%E6%9C%9F%E5%A4%9A%E6%A0%A1%E8%AE%AD%E7%BB%83%E8%90%A5%EF%BC%88%E7%AC%AC%E4%B8%80%E5%9C%BA%EF%BC%89/" title="2019牛客暑期多校训练营（第一场）"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/blog/2019/02/15/HZNU-2019-winter-camp/" title="HZNU 2019 winter camp"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>$</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>Maybe you could buy me a cup of coffee.</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/blog/images/donate/alipayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/blog/images/donate/wechatpayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> alipay</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> wechat payment</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+    
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/Hsueh-Xue" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://weibo.com/u/5609636028" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+        
+        <div class="publishby">
+            <!--        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.-->
+        </div>
+    </div>
+    <div>
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+        Total page views of this site <span id="busuanzi_value_site_pv"></span> times&nbsp&nbsp&nbsp
+        Number of visitors <span id="busuanzi_value_site_uv"></span> person-time
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+   window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/blog/js/plugin.min.js"></script>
+
+
+<script src="/blog/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/blog/',
+        CONTENT_URL: '/blog/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/blog/js/insight.js"></script>
+
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: 'ioLu7jefddxvht3Plek4BfO3-gzGzoHsz',
+    appKey: 'LJYU8kVQU5t0rJWk9ksB6m5G',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+<script type="text/javascript" color="0,0,0" opacity='0.8' zIndex="-2" count="199"
+        src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
