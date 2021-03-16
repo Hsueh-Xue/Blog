@@ -54,9 +54,9 @@ int main() {
 
 思路：将问题转换成，有$m$对关系，如果是两个$Warriors$，则属性较少$b+c$，如果是两个$Mages$，属性增加$a+b$，否则增加$a+c$，问最大属性值。
 
-那么建立如下网络流，可以得到 $ a = b =（A + B）/ 2， c = d = (C + B) / 2, e = -B + (A + C) / 2$ 
+那么建立如下网络流，可以得到 $a = b =（A + B）/ 2， c = d = (C + B) / 2, e = -B + (A + C) / 2$ 
 
-![1008](/upload/2019 Multi-University Training Contest 2/1008.png)
+![1](https://cdn.jsdelivr.net/gh/Hsueh-Xue/Hsueh-Xue.github.io@master/upload/2019-Multi-University-Training-Contest-2/1008.png)
 
 答案为总的$a+b+c$减去最小割
 

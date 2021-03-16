@@ -30,9 +30,9 @@ bt default
 
 然后添加站点
 
-![1](/upload\v2rayN搭建\1.png)
+![1](https://cdn.jsdelivr.net/gh/Hsueh-Xue/Hsueh-Xue.github.io@master/upload/v2rayN/1.png)
 
-![1](/upload\v2rayN搭建\2.png)
+![1](https://cdn.jsdelivr.net/gh/Hsueh-Xue/Hsueh-Xue.github.io@master/upload/v2rayN/2.png)
 
 ## 安装v2rayN
 
@@ -42,7 +42,7 @@ bt default
 bash <(curl -L -s https://install.direct/go.sh)
 ```
 
-![1](/upload\v2rayN搭建\3.png)
+![1](https://cdn.jsdelivr.net/gh/Hsueh-Xue/Hsueh-Xue.github.io@master/upload/v2rayN/3.png)
 
 记住你的port和UUID
 
@@ -57,7 +57,7 @@ cat /etc/v2ray/config.json | grep id
 
 然后配置网站的SSL
 
-![1](/upload\v2rayN搭建\4.png)
+![1](https://cdn.jsdelivr.net/gh/Hsueh-Xue/Hsueh-Xue.github.io@master/upload/v2rayN/4.png)
 
 通知勾选强制HTTPS
 
@@ -80,7 +80,7 @@ cat /etc/v2ray/config.json | grep id
 1、其中第一行的 cs 是你自己 ws 的 path，斜杠不要删除，可以自己修改,也可以不改；
 2、还记得用官方脚本安装 v2ray 后出现的 port 吗，我叫大家记住的，这个 port 后面的就是你的端口号。修改上面代码后保存，如下图：
 
-![1](/upload\v2rayN搭建\5.png)
+![1](https://cdn.jsdelivr.net/gh/Hsueh-Xue/Hsueh-Xue.github.io@master/upload/v2rayN/5.png)
 
 ### 接下来才是重点，配置 V2ray 配置文件：
 进入 /etc/v2ray 目录，编辑 config.json 文件 将里面全部代码改为：
@@ -175,7 +175,7 @@ service v2ray start|stop|status|reload|restart|force-reload
 
 ## 客户端配置
 
-![1](/upload\v2rayN搭建\6.png)
+![1](https://cdn.jsdelivr.net/gh/Hsueh-Xue/Hsueh-Xue.github.io@master/upload/v2rayN/6.png)
 
 ## 杂
 
