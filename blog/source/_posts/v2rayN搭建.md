@@ -212,10 +212,10 @@ v2rayN 代理 git 操作
 git config --global http.proxy http://127.0.0.1:10809
 git config --global https.proxy https://127.0.0.1:10809
 
-查看
+#查看
 git config –-get –-global http.proxy
 
-取消
+#取消
 git config --global --unset https.proxy
 git config --global --unset http.proxy 
 ```
