@@ -1,24 +1,13 @@
 ---
 title: 面试
-date: 2021-03-25 19:15:23
+date: 2021-03-15 10:16:53
 tags:
 password: 2017212212083
 abstract: 有东西被加密了, 请输入密码查看.
 message: 您好, 这里需要密码.
 wrong_pass_message: 抱歉, 这个密码看着不太对, 请再试试.
+hide: true
 ---
-
-参考文章：
-
-[一文搞定 UDP 和 TCP 高频面试题！](https://zhuanlan.zhihu.com/p/108822858)
-
-[C++ STL ：Vector内存分配与释放](https://zhuanlan.zhihu.com/p/338390842)
-
-[JavaGuide](https://github.com/Snailclimb/JavaGuide)
-
-[Mysql锁机制简单了解一下](https://blog.csdn.net/qq_34337272/article/details/80611486)
-
-[你真的了解 Cookie 和 Session 吗](http://www.ityouknow.com/it/2019/05/11/cookie-session.html)
 
 # 计算机网络
 
@@ -146,7 +135,7 @@ TCP 提供面向连接的服务。在传送数据之前必须先建立连接，�
 5. 服务器返回响应结果
 6. 关闭TCP连接
 7. 浏览器解析HTML并渲染
-   ![4](https://cdn.jsdelivr.net/gh/Hsueh-Xue/Hsueh-Xue.github.io@master/upload/interview/4.jfif)
+ ![4](https://cdn.jsdelivr.net/gh/Hsueh-Xue/Hsueh-Xue.github.io@master/upload/interview/4.jfif)
 
 
 
@@ -165,125 +154,6 @@ TCP 提供面向连接的服务。在传送数据之前必须先建立连接，�
 9. 由于（主流） **浏览器**的一些 **限制**，导致get请求所传输的数据长度和字符编码(ASCII)受到一些限制，但是post请求一般未对其进行限制，所以支持更多的编码和数据长度 
 
 post的安全性主要体现在上面的2，4，5，6点。可以通过抓包的形式获取到他的请求内容，不过，可能需要进行转码，解密。
-
-## HTTP 状态码
-
-服务器返回的 **响应报文** 中第一行为状态行，包含了状态码以及原因短语，用来告知客户端请求的结果。
-
-| 状态码 |               类别               |            含义            |
-| :----: | :------------------------------: | :------------------------: |
-|  1XX   |  Informational（信息性状态码）   |     接收的请求正在处理     |
-|  2XX   |      Success（成功状态码）       |      请求正常处理完毕      |
-|  3XX   |   Redirection（重定向状态码）    | 需要进行附加操作以完成请求 |
-|  4XX   | Client Error（客户端错误状态码） |     服务器无法处理请求     |
-|  5XX   | Server Error（服务器错误状态码） |     服务器处理请求出错     |
-
-### 1XX 信息
-
-- **100 Continue** ：表明到目前为止都很正常，客户端可以继续发送请求或者忽略这个响应。
-
-### 2XX 成功
-
-- **200 OK**
-- **204 No Content** ：请求已经成功处理，但是返回的响应报文不包含实体的主体部分。一般在只需要从客户端往服务器发送信息，而不需要返回数据时使用。
-- **206 Partial Content** ：表示客户端进行了范围请求，响应报文包含由 Content-Range 指定范围的实体内容。
-
-### 3XX 重定向
-
-- **301 Moved Permanently** ：永久性重定向
-- **302 Found** ：临时性重定向
-- **303 See Other** ：和 302 有着相同的功能，但是 303 明确要求客户端应该采用 GET 方法获取资源。
-- 注：虽然 HTTP 协议规定 301、302 状态下重定向时不允许把 POST 方法改成 GET 方法，但是大多数浏览器都会在 301、302 和 303 状态下的重定向把 POST 方法改成 GET 方法。
-- **304 Not Modified** ：如果请求报文首部包含一些条件，例如：If-Match，If-Modified-Since，If-None-Match，If-Range，If-Unmodified-Since，如果不满足条件，则服务器会返回 304 状态码。
-- **307 Temporary Redirect** ：临时重定向，与 302 的含义类似，但是 307 要求浏览器不会把重定向请求的 POST 方法改成 GET 方法。
-
-### 4XX 客户端错误
-
-- **400 Bad Request** ：请求报文中存在语法错误。
-- **401 Unauthorized** ：该状态码表示发送的请求需要有认证信息（BASIC 认证、DIGEST 认证）。如果之前已进行过一次请求，则表示用户认证失败。
-- **403 Forbidden** ：请求被拒绝。
-- **404 Not Found**
-
-### 5XX 服务器错误
-
-- **500 Internal Server Error** ：服务器正在执行请求时发生错误。
-- **503 Service Unavailable** ：服务器暂时处于超负载或正在进行停机维护，现在无法处理请求。
-
-## 什么是分组交换？优缺点？
-
-分组交换采用存储转发技术，把一个**报文**划分为几个**分组**后再进行传送。分组的首部非常重要，包含了**目的地址和源地址**等重要控制信息，这样每一个分组才能在互联网中独立地选择传输路径，并被正确地交付到分组传输的终点，最后再组合起来。
-
-**优点：**
-
-（1）高效，在分组传输时动态分配带宽，对通信链路逐段占用。
-
-（2）灵活，为每一个分组独立地选择最合适的转发路由。
-
-（3）迅速，以分组为单位，可以不先建立连接就能向主机发送数据。
-
-（4）可靠，分布式多路由的分组交换网，使传输鲁棒性强。
-
-**缺点：**
-
-（1）分组在路由器存储转发时需要排队，有时延。
-
-（2）分组必须携带控制信息（头部）也造成了开销。
-
-## 请说说HTTP协议的特点
-
-1. **支持客户/服务器模式**
-
-   HTTP协议规定，请求从客户端发出，最后服务器端响应该请求并返回。换句话说，肯定是先从客户端开始建立通信的，服务器端在没有接收到请求之前不会发送响应。
-
-2. **简单快速**
-
-   客户向服务器请求服务时，只需传送请求方法和路径。请求方法常用的有GET、HEAD、POST。由于HTTP协议简单，使得HTTP服务器的程序规模小，因而通信速度很快。
-
-3. **灵活**
-
-   HTTP允许传输任意类型的数据对象。正在传输的类型由Content-Type（Content-Type是HTTP包中用来表示内容类型的标识）加以标记。
-
-4. **无连接**
-
-   无连接的含义是限制每次连接只处理一个请求。服务器处理完客户的请求，并收到客户的应答后，即断开连接。采用这种方式可以节省传输时间。
-
-5. **无状态**
-
-   无状态是指协议对于事务处理没有记忆能力，服务器不知道客户端是什么状态。即我们给服务器发送 HTTP 请求之后，服务器根据请求，会给我们发送数据过来，但是，发送完，不会记录任何信息。
-
-## HTTPS的加密原理
-
-HTTPS采用**对称密钥**加密和**非对称密钥**加密加密两者混合加密，两者都有各自的优点。**对称密钥加密处理速度快，但密钥无法安全发送给对方**；**非对称密钥加密处理速度慢，但密钥能够安全交换**。但如果我们将两种加密方式一起使用，则两种加密方式就能互补。
-
-也就是说，利用**非对称密钥**加密方式安全地交换在稍后的**对称密钥**加密中要使用的密钥，在确保密钥安全前提下，使用**对称密钥**加密方式进行通信。
-
-![5](https://cdn.jsdelivr.net/gh/Hsueh-Xue/Hsueh-Xue.github.io@master/upload/interview/10.png)
-
-## 什么是对称加密？什么是非对称加密？两者区别？
-
-1. **对称密钥加密：加密与解密使用同一个密钥**
-
-   也就是说在加密的同时，也会把密钥发送给对方。
-
-2. **非对称密钥**
-
-   **非对称密钥加密**有两把密钥。一把叫私有密钥，另一把叫公有密钥。私有密钥不让任何人知道，公有密钥随意发送。
-
-## 对称加密有哪些？非对称加密有哪些？
-
-一种是**对称密钥加密**例如：DES、AES-GCM、ChaCha20-Poly1305等，一种是**非对称密钥加密**，例如：RSA、DSA、ECDSA、 DH、ECDHE
-
-## 数字证书用来干嘛的？
-
-服务器会给客户端发出数字证书来证明自己的身份。**客户端在接受到服务端发来的SSL证书时，会对证书的真伪进行校验**。证书中包含的具体内容有：
-
-1. 证书的发布机构CA
-2. 证书的有效期
-3. 公钥
-4. 证书所有者
-5. 签名
-
-这样我们通过数字证书，就可以安全交换对称秘钥了，**既解决了公钥获取问题，又解决了黑客冒充问题**，一箭双雕。
 
 # 操作系统
 
@@ -437,29 +307,6 @@ HTTPS采用**对称密钥**加密和**非对称密钥**加密加密两者混合�
 
 👨‍💻**面试官** ： 回答的还不错！不过漏掉了一个很重要的 **段页式管理机制** 。段页式管理机制结合了段式管理和页式管理的优点。简单来说段页式管理机制就是把主存先分成若干段，每个段又分成若干页，也就是说 **段页式管理机制** 中段与段之间以及段的内部的都是离散的。
 
-## 内核态与用户态的区别
-
-1. **内核态与用户态**：**内核态**（系统态）与**用户态**是操作系统的两种运行级别。内核态拥有最高权限，可以访问所有系统指令；用户态则只能访问一部分指令。
-2. **什么时候进入内核态**：共有三种方式：a、**系统调用**。b、**异常**。c、**设备中断**。其中，系统调用是主动的，另外两种是被动的。
-3. **为什么区分内核态与用户态**：在CPU的所有指令中，有一些指令是非常危险的，如果错用，将导致整个系统崩溃。比如：清内存、设置时钟等。所以区分内核态与用户态主要是出于安全的考虑。
-
-#### 虚拟地址到物理地址怎么映射的？
-
-操作系统为每一个进程维护了一个从虚拟地址到物理地址的映射关系的数据结构，叫**页表。页表的内容就是该进程的虚拟地址到物理地址的一个映射。页表中的每一项都记录了这个页的基地址。**
-
-**三级页表转换方法：（两步）**
-
-（1）逻辑地址转线性地址：段起始地址+段内偏移地址=线性地址
-
-（2）线性地址转物理地址：
-
-每一个32位的线性地址被划分为三部分：页目录索引（10位）、页表索引（10位）、页内偏移（12位）
-
-- 从cr3中取出进程的页目录地址（操作系统调用进程时，这个地址被装入寄存器中）
-- 页目录地址 + 页目录索引 = 页表地址
-- 页表地址 + 页表索引 = 页地址
-- 页地址 + 页内偏移 = 物理地址
-
 # 数据库
 
 ## 事务
@@ -472,7 +319,7 @@ HTTPS采用**对称密钥**加密和**非对称密钥**加密加密两者混合�
 
 ### 事务的四大特性(ACID)
 
-1. **原子性（Atomicity）：** 事务是最小的执行单位，不允许分割。事务的原子性确保动作要么全部完成，要么完全不起作用；**用undo log实现**
+1. **原子性（Atomicity）：** 事务是最小的执行单位，不允许分割。事务的原子性确保动作要么全部完成，要么完全不起作用；
 2. **一致性（Consistency）：** 执行事务后，数据库从一个正确的状态变化到另一个正确的状态；
 3. **隔离性（Isolation）：** 并发访问数据库时，一个用户的事务不被其他事务所干扰，各并发事务之间数据库是独立的；
 4. **持久性（Durability）：** 一个事务被提交之后。它对数据库中数据的改变是持久的，即使数据库发生故障也不应该对其有任何影响。
@@ -532,18 +379,6 @@ HTTPS采用**对称密钥**加密和**非对称密钥**加密加密两者混合�
 
 ![5](https://cdn.jsdelivr.net/gh/Hsueh-Xue/Hsueh-Xue.github.io@master/upload/interview/7.png)
 
-## 红黑树
-
-红黑树是一种含有红黑结点并能自平衡的二叉查找树。它必须满足下面性质：
-
-- 性质1：每个节点要么是黑色，要么是红色。
-- 性质2：根节点是黑色。
-- 性质3：每个叶子节点（NULL）是黑色。
-- 性质4：每个红色结点的两个子结点一定都是黑色。
-- **性质5：任意一结点到每个叶子结点的路径都包含数量相同的黑结点。**
-
-查询时间为$O(log\ n)$
-
 # C++
 
 ## 智能指针
@@ -586,148 +421,11 @@ hash_multimap:底层数据结构为hash表，无序，可重复。
 
 [c++11新特性详解](https://zhuanlan.zhihu.com/p/21930436)
 
-## 说说new和malloc的区别，各自底层实现原理
-
-1. new是操作符，而malloc是函数。
-2. new在调用的时候先分配内存，在调用构造函数，释放的时候调用析构函数；而malloc没有构造函数和析构函数。
-3. malloc需要给定申请内存的大小，返回的指针需要强转；new会调用构造函数，不用指定内存的大小，返回指针不用强转。
-4. new可以被重载；malloc不行
-5. new分配内存更直接和安全。
-6. new发生错误抛出异常，malloc返回null
-
-## 为什么要少使用宏？C++有什么解决方案？
-
-1. 由程序编译的四个过程，知道**宏是在预编译阶段被展开的。**在预编译阶段是不会进行**语法检查、语义分析的**，宏被暴力替换，正是因为如此，如果不注意细节，宏的使用很容易出现问题。比如在表达式中忘记加括号等问题。
-
-2. 正因为如此，在C++中为了安全性，我们就要少用宏。
-
-   不带参数的宏命令我们可以用**常量const**来替代，比如`const int PI = 3.1415`，可以起到同样的效果，而且还比宏安全，因为这条语句会在编译阶段进行语法检查。
-
-   而带参数的宏命令有点类似函数的功能，在C++中可以使用**内联函数或模板**来替代，内联函数与宏命令功能相似，是在调用函数的地方，用函数体直接替换。但是内联函数比宏命令安全，因为内联函数的替换发生在编译阶段，同样会进行语法检查、语义分析等，而宏命令发生在预编译阶段，属于暴力替换，并不安全。
-
-## 说说volatile和mutable
-
-**mutable**是为了突破const的限制而设置的。被mutable修饰的变量，将永远处于可变的状态，即使在一个const函数中，甚至结构体变量或者类对象为const，其mutable成员也可以被修改。mutable在类中只能够修饰非静态数据成员。
-
-一个定义为**volatile**的变量是说这变量可能会被意想不到地改变，这样，编译器每次会从内存里重新读取这个变量的值，而不是从寄存器里读取。特别是多线程编程中，变量的值在内存中可能已经被修改，而编译器优化优先从寄存器里读值，读取的并不是最新值。这就是volatile的作用了。
-
-## 请你说说虚函数的工作机制
-
-C++实现虚函数的原理是**虚函数表+虚表指针**。
-
-当一个类里存在虚函数时，编译器会为类创建一个虚函数表，**虚函数表**是一个**数组**，数组的元素存放的是类中**虚函数的地址**。
-
-同时为每个类的对象添加一个隐藏成员，该隐藏成员保存了指向该虚函数表的指针。该隐藏成员占据该对象的内存布局的最前端。
-
-**所以虚函数表只有一份，而有多少个对象，就对应多少个虚函数表指针**。
-
-### 请你说说智能指针，智能指针为什么不用手动释放内存了？
-
-使用普通指针，容易造成堆内存泄露（忘记释放），二次释放，程序发生异常时内存泄露等问题等。
-
-正是因为指针存在这样的问题，C++便引入了**智能指针**来更好的管理堆内存。**智能指针**是利用了一种叫做**RAII**（资源获取即初始化）的技术对普通的指针进行封装，这使得智能指针实质是一个对象，行为表现的却像一个指针。
-
-**因为**智能指针就是一个**类**，当超出了类的作用域时，类会自动调用**析构函数**，自动释放资源。这样程序员就不用再担心内存泄露的问题了。
-
-C++里面有四个指针：**auto_ptr、unique_ptr、shared_ptr、weak_ptr**，后面三个是C++11支持的，第一个被C++11弃用。
-
-### auto_ptr有什么样的问题
-
-看如下代码：
-
-`auto_ptr<string> p1 (``new` `string (``"I am jiang douya."``)); ``auto_ptr<string> p2; ``p2 = p1; ``//auto_ptr不会报错.`
-
-**auto**指针存在的问题是，两个智能指针同时指向一块内存，就会两次释放同一块资源，存在潜在的内存崩溃问题！因此**auto**指针被C++11弃用。应该用**unique**指针替代**auto**指针。
-
-### unique_ptr指针实现原理
-
-**unique指针**规定**一个智能指针独占一块内存资源**。当两个智能指针同时指向一块内存，编译报错。
-
-我们只需要将拷贝构造函数和赋值拷贝构造函数申明为private或delete。不允许拷贝构造函数和赋值操作符
-
-### shared_ptr实现原理，来手撕一下
-
-实现原理：有一个引用计数的指针类型变量，专门用于引用计数，使用拷贝构造函数和赋值拷贝构造函数时，引用计数加1，当引用计数为0时，释放资源。
-
-```c++
-#include <iostream>  
-#include <stdlib.h>  
-using namespace std;  
-
-template <typename T>  
-class mysharedPtr {  
-public:  
-    mysharedPtr(T* p = NULL);  
-    ~mysharedPtr();  
-    mysharedPtr(const mysharedPtr<T>& other);  
-    mysharedPtr<T>& operator=(const mysharedPtr<T>& other);  
-private:  
-    T* m_ptr;  
-    unsigned int* m_count;  
-};  
-
-template <typename T>  
-mysharedPtr<T>::mysharedPtr(T* p) {  
-    m_ptr = p;  
-    m_count = new unsigned int(0);  
-    ++(*m_count);  
-    cout << "Constructor is succeed!" << endl;  
-}  
-
-template <typename T>  
-mysharedPtr<T>::~mysharedPtr() {  
-    --(*m_count);  
-    if ((*m_count) == 0) {  
-        delete[] m_ptr;  
-        m_ptr = NULL;  
-        delete[] m_count;  
-        m_count = NULL;  
-        cout << "Destructor is succeed!" << endl;  
-    }  
-}  
-
-template <typename T>  
-mysharedPtr<T>::mysharedPtr(const mysharedPtr<T>& other) {  
-    m_ptr = other.m_ptr;  
-    m_count = other.m_count;  
-    ++(*m_count);  
-    cout << "Copy constructor is succeed!" << endl;  
-}  
-
-template <typename T>  
-mysharedPtr<T>& mysharedPtr<T>::operator=(const mysharedPtr<T>& other) {  
-    // 《C++ primer》：“这个赋值操作符在减少左操作数的使用计数之前使other的使用计数加1，  
-    // 从而防止自身赋值”而导致的提早释放内存  
-    ++(*other.m_count);  
-    --(*m_count);  
-    // 将左操作数对象的使用计数减1，若该对象的使用计数减至0，则删除该对象  
-    if ((*m_count) == 0) {  
-        delete[] m_ptr;  
-        m_ptr = NULL;  
-        delete[] m_count;  
-        m_count = NULL;  
-        cout << "Left side object is deleted!" << endl;  
-    }  
-    m_ptr = other.m_ptr;  
-    m_count = other.m_count;  
-    cout << "Assignment operator overloaded is succeed!" << endl;  
-    return *this;  
-}  
-```
-
-### shared_ptr会不会出现内存泄露？怎么解决？
-
-会出现内存泄露问题。
-
-共享指针的循环引用计数问题：当两个类中相互定义shared_ptr成员变量，同时对象相互赋值时，就会产生循环引用计数问题，最后引用计数无法清零，资源得不到释放。
-
-可以使用weak_ptr，weak_ptr是**弱引用**，weak_ptr的**构造和析构不会引起引用计数的增加或减少**。我们可以将其中一个改为weak_ptr指针就可以了。比如我们将class B里shared_ptr换成weak_ptr。
-
 # JAVA
 
 ## JAVA入门
 
-###  Java 语言有哪些特点?
+####  Java 语言有哪些特点?
 
 1. 简单易学；
 2. 面向对象（封装，继承，多态）；
@@ -738,11 +436,11 @@ mysharedPtr<T>& mysharedPtr<T>::operator=(const mysharedPtr<T>& other) {
 7. 支持网络编程并且很方便（ Java 语言诞生本身就是为简化网络编程设计的，因此 Java 语言不仅支持网络编程而且很方便）；
 8. 编译与解释并存；
 
-### **Java 程序从源代码到运行一般有下面 3 步：**
+**Java 程序从源代码到运行一般有下面 3 步：**
 
 ![6](https://cdn.jsdelivr.net/gh/Hsueh-Xue/Hsueh-Xue.github.io@master/upload/interview/6.png)
 
-### JDK 和 JRE
+#### JDK 和 JRE
 
 JDK 是 Java Development Kit 缩写，它是功能齐全的 Java SDK。它拥有 JRE 所拥有的一切，还有编译器（javac）和工具（如 javadoc 和 jdb）。它能够创建和编译程序。
 
@@ -750,7 +448,7 @@ JRE 是 Java 运行时环境。它是运行已编译 Java 程序所需的所有�
 
 如果你只是为了运行一下 Java 程序的话，那么你只需要安装 JRE 就可以了。如果你需要进行一些 Java 编程方面的工作，那么你就需要安装 JDK 了。但是，这不是绝对的。有时，即使您不打算在计算机上进行任何 Java 开发，仍然需要安装 JDK。例如，如果要使用 JSP 部署 Web 应用程序，那么从技术上讲，您只是在应用程序服务器中运行 Java 程序。那你为什么需要 JDK 呢？因为应用程序服务器会将 JSP 转换为 Java servlet，并且需要使用 JDK 来编译 servlet。
 
-###  Java 和 C++的区别?
+####  Java 和 C++的区别?
 
 - 都是面向对象的语言，都支持封装、继承和多态
 - Java 不提供指针来直接访问内存，程序内存更加安全
@@ -758,11 +456,11 @@ JRE 是 Java 运行时环境。它是运行已编译 Java 程序所需的所有�
 - Java 有自动内存管理垃圾回收机制(GC)，不需要程序员手动释放无用内存
 - **在 C 语言中，字符串或字符数组最后都会有一个额外的字符`'\0'`来表示结束。但是，Java 语言中没有结束符这一概念。** 
 
-### ==和 equals 的区别
+#### ==和 equals 的区别
 
 **`==`** : 它的作用是判断两个对象的地址是不是相等。即判断两个对象是不是同一个对象。(**基本数据类型==比较的是值，引用数据类型==比较的是内存地址**)
 
-### 重载和重写的区别
+#### 重载和重写的区别
 
 重载就是同样的一个方法能够根据输入数据的不同，做出不同的处理
 
@@ -777,85 +475,16 @@ JRE 是 Java 运行时环境。它是运行已编译 Java 程序所需的所有�
 | 访问修饰符 | 可修改   | 一定不能做更严格的限制（可以降低限制）                       |
 | 发生阶段   | 编译期   | 运行期                                                       |
 
-### 深拷贝 vs 浅拷贝
+#### 深拷贝 vs 浅拷贝
 
 1. **浅拷贝**：对基本数据类型进行值传递，对引用数据类型进行引用传递般的拷贝，此为浅拷贝。
 2. **深拷贝**：对基本数据类型进行值传递，对引用数据类型，创建一个新的对象，并复制其内容，此为深拷贝。
 
-### final,static,this,super 关键字总结
-
-#### final 关键字
-
-**final关键字，意思是最终的、不可修改的，最见不得变化 ，用来修饰类、方法和变量，具有以下特点：**
-
-1. **final修饰的类不能被继承，final类中的所有成员方法都会被隐式的指定为final方法；**
-2. **final修饰的方法不能被重写；**
-3. **final修饰的变量是常量，如果是基本数据类型的变量，则其数值一旦在初始化之后便不能更改；如果是引用类型的变量，则在对其初始化之后便不能让其指向另一个对象。**
-
-#### static 关键字
-
-**static 关键字主要有以下四种使用场景：**
-
-1. **修饰成员变量和成员方法:** 被 static 修饰的成员属于类，不属于单个这个类的某个对象，被类中所有对象共享，可以并且建议通过类名调用。被static 声明的成员变量属于静态成员变量，静态变量 存放在 Java 内存区域的方法区。调用格式：`类名.静态变量名` `类名.静态方法名()`
-2. **静态代码块:** 静态代码块定义在类中方法外, 静态代码块在非静态代码块之前执行(静态代码块—>非静态代码块—>构造方法)。 该类不管创建多少对象，静态代码块只执行一次.
-3. **静态内部类（static修饰类的话只能修饰内部类）：** 静态内部类与非静态内部类之间存在一个最大的区别: 非静态内部类在编译完成之后会隐含地保存着一个引用，该引用是指向创建它的外围类，但是静态内部类却没有。没有这个引用就意味着：1. 它的创建是不需要依赖外围类的创建。2. 它不能使用任何外围类的非static成员变量和方法。
-4. **静态导包(用来导入类中的静态资源，1.5之后的新特性):** 格式为：`import static` 这两个关键字连用可以指定导入某个类中的指定静态资源，并且不需要使用类名调用类中静态成员，可以直接使用类中静态成员变量和成员方法。
-
-#### this 关键字
-
-this关键字用于引用类的当前实例。
-
-#### super 关键字
-
-super关键字用于从子类访问父类的变量和方法。
-
-## static 关键字详解
-
-### static 关键字主要有以下四种使用场景
-
-1. 修饰成员变量和成员方法
-2. 静态代码块
-3. 修饰类(只能修饰内部类)
-4. 静态导包(用来导入类中的静态资源，1.5之后的新特性)
-
-### 修饰成员变量和成员方法(常用)
-
-被 static 修饰的成员属于类，不属于单个这个类的某个对象，被类中所有对象共享，可以并且建议通过类名调用。被static 声明的成员变量属于静态成员变量，静态变量 存放在 Java 内存区域的方法区。
-
-### 静态代码块
-
-静态代码块定义在类中方法外, 静态代码块在非静态代码块之前执行(静态代码块 —> 非静态代码块 —> 构造方法)。 该类不管创建多少对象，静态代码块只执行一次.
-
-### 静态内部类
-
-静态内部类与非静态内部类之间存在一个最大的区别，我们知道非静态内部类在编译完成之后会隐含地保存着一个引用，该引用是指向创建它的外围类，但是静态内部类却没有。没有这个引用就意味着：
-
-1. 它的创建是不需要依赖外围类的创建。
-2. 它不能使用任何外围类的非static成员变量和方法。
-
-### 静态导包
-
-格式为：import static
-
-这两个关键字连用可以指定导入某个类中的指定静态资源，并且不需要使用类名调用类中静态成员，可以直接使用类中静态成员变量和成员方法
-
-### 静态方法与非静态方法
-
-静态方法属于类本身，非静态方法属于从该类生成的每个对象。 如果您的方法执行的操作不依赖于其类的各个变量和方法，请将其设置为静态（这将使程序的占用空间更小）。 否则，它应该是非静态的。
-
-### `static{}`静态代码块与`{}`非静态代码块(构造代码块)
-
-相同点： 都是在JVM加载类时且在构造方法执行之前执行，在类中都可以定义多个，定义多个时按定义的顺序执行，一般在代码块中对一些static变量进行赋值。
-
-不同点： 静态代码块在非静态代码块之前执行(静态代码块 -> 非静态代码块 -> 构造方法)。静态代码块只在第一次new执行一次，之后不再执行，而非静态代码块在每new一次就执行一次。 非静态代码块可在普通方法中定义(不过作用不大)；而静态代码块不行。
-
-
-
 ## Java 面向对象
 
-### 面向对象和面向过程的区别
+#### 面向对象和面向过程的区别
 
-####  类和对象
+###  类和对象
 
 - **面向过程** ：**面向过程性能比面向对象高。** 因为类调用时需要实例化，开销比较大，比较消耗资源，所以当性能是最重要的考量因素的时候，比如单片机、嵌入式开发、Linux/Unix 等一般采用面向过程开发。但是，**面向过程没有面向对象易维护、易复用、易扩展。**
 - **面向对象** ：**面向对象易维护、易复用、易扩展。** 因为面向对象有封装、继承、多态性的特性，所以可以设计出低耦合的系统，使系统更加灵活、更加易于维护。但是，**面向对象性能比面向过程低**。
@@ -943,11 +572,11 @@ ArrayList扩容为1.5倍
 
 ### HashMap 和 Hashtable 的区别
 
-    1. **线程是否安全：** `HashMap` 是非线程安全的，`HashTable` 是线程安全的,因为 `HashTable` 内部的方法基本都经过`synchronized` 修饰。（如果你要保证线程安全的话就使用 `ConcurrentHashMap` 吧！）；
-    2. **效率：** 因为线程安全的问题，`HashMap` 要比 `HashTable` 效率高一点。另外，`HashTable` 基本被淘汰，不要在代码中使用它；
-    3. **对 Null key 和 Null value 的支持：** `HashMap` 可以存储 null 的 key 和 value，但 null 作为键只能有一个，null 作为值可以有多个；HashTable 不允许有 null 键和 null 值，否则会抛出 `NullPointerException`。
-    4. **初始容量大小和每次扩充容量大小的不同 ：** ① 创建时如果不指定容量初始值，`Hashtable` 默认的初始大小为 11，之后每次扩充，容量变为原来的 2n+1。`HashMap` 默认的初始化大小为 16。之后每次扩充，容量变为原来的 2 倍。② 创建时如果给定了容量初始值，那么 Hashtable 会直接使用你给定的大小，而 `HashMap` 会将其扩充为 2 的幂次方大小（`HashMap` 中的`tableSizeFor()`方法保证，下面给出了源代码）。也就是说 `HashMap` 总是使用 2 的幂作为哈希表的大小,后面会介绍到为什么是 2 的幂次方。
-    5. **底层数据结构：** JDK1.8 以后的 `HashMap` 在解决哈希冲突时有了较大的变化，当链表长度大于阈值（默认为 8）（将链表转换成红黑树前会判断，如果当前数组的长度小于 64，那么会选择先进行数组扩容，而不是转换为红黑树）时，将链表转化为红黑树，以减少搜索时间。Hashtable 没有这样的机制。
+  1. **线程是否安全：** `HashMap` 是非线程安全的，`HashTable` 是线程安全的,因为 `HashTable` 内部的方法基本都经过`synchronized` 修饰。（如果你要保证线程安全的话就使用 `ConcurrentHashMap` 吧！）；
+  2. **效率：** 因为线程安全的问题，`HashMap` 要比 `HashTable` 效率高一点。另外，`HashTable` 基本被淘汰，不要在代码中使用它；
+  3. **对 Null key 和 Null value 的支持：** `HashMap` 可以存储 null 的 key 和 value，但 null 作为键只能有一个，null 作为值可以有多个；HashTable 不允许有 null 键和 null 值，否则会抛出 `NullPointerException`。
+  4. **初始容量大小和每次扩充容量大小的不同 ：** ① 创建时如果不指定容量初始值，`Hashtable` 默认的初始大小为 11，之后每次扩充，容量变为原来的 2n+1。`HashMap` 默认的初始化大小为 16。之后每次扩充，容量变为原来的 2 倍。② 创建时如果给定了容量初始值，那么 Hashtable 会直接使用你给定的大小，而 `HashMap` 会将其扩充为 2 的幂次方大小（`HashMap` 中的`tableSizeFor()`方法保证，下面给出了源代码）。也就是说 `HashMap` 总是使用 2 的幂作为哈希表的大小,后面会介绍到为什么是 2 的幂次方。
+  5. **底层数据结构：** JDK1.8 以后的 `HashMap` 在解决哈希冲突时有了较大的变化，当链表长度大于阈值（默认为 8）（将链表转换成红黑树前会判断，如果当前数组的长度小于 64，那么会选择先进行数组扩容，而不是转换为红黑树）时，将链表转化为红黑树，以减少搜索时间。Hashtable 没有这样的机制。
 
 ### HashMap 和 HashSet 区别
 
@@ -973,28 +602,287 @@ ArrayList扩容为1.5倍
 
 - `Hashtable`给所有数据加同一把锁，导致每次只能一个数据操作，`ConcurrentHashMap`
 
-# 杂
+# 前端
 
-## Cookie和Session
+## JavaScript 数据类型
 
-### 什么是Cooki
+**值类型(基本类型)**：字符串（String）、数字(Number)、布尔(Boolean)、对空（Null）、未定义（Undefined）、Symbol。
 
-HTTP Cookie（也叫 Web Cookie或浏览器 Cookie）是服务器发送到用户浏览器并保存在本地的一小块数据，它会在浏览器下次向同一服务器再发起请求时被携带并发送到服务器上。通常，它用于告知服务端两个请求是否来自同一浏览器，如保持用户的登录状态。Cookie 使基于无状态的 HTTP 协议记录稳定的状态信息成为了可能。
+**引用数据类型**：对象(Object)、数组(Array)、函数(Function)。
 
-Cookie 主要用于以下三个方面：
+## CSS
 
-- 会话状态管理（如用户登录状态、购物车、游戏分数或其它需要记录的信息）
-- 个性化设置（如用户自定义设置、主题等）
-- 浏览器行为跟踪（如跟踪分析用户行为等）
+### display:none和visible:hidden的区别
 
-### 什么是Session
+display:none 不为被隐藏的对象保留其物理空间，即该对象在页面上彻底消失，通俗来说就是看不见也摸不到。
 
-Session 代表着服务器和客户端一次会话的过程。Session 对象存储特定用户会话所需的属性及配置信息。这样，当用户在应用程序的 Web 页之间跳转时，存储在 Session 对象中的变量将不会丢失，而是在整个用户会话中一直存在下去。当客户端关闭会话，或者 Session 超时失效时会话结束。
+visible:hidden使对象在网页上不可见，但该对象在网页上所占的空间没有改变，通俗来说就是看不见但摸得到。
 
-### Cookie 和 Session 有什么不同？
+## Ajax
 
-- 作用范围不同，Cookie 保存在客户端（浏览器），Session 保存在服务器端。
-- 存取方式的不同，Cookie 只能保存 ASCII，Session 可以存任意数据类型，一般情况下我们可以在 Session 中保持一些常用变量信息，比如说 UserId 等。
-- 有效期不同，Cookie 可设置为长时间保持，比如我们经常使用的默认登录功能，Session 一般失效时间较短，客户端关闭或者 Session 超时都会失效。
-- 隐私策略不同，Cookie 存储在客户端，比较容易遭到不法获取，早期有人将用户的登录名和密码存储在 Cookie 中导致信息被窃取；Session 存储在服务端，安全性相对 Cookie 要好一些。
-- 存储大小不同， 单个 Cookie 保存的数据不能超过 4K，Session 可存储数据远高于 Cookie。
+### Ajax过程
+
+1. 创建`XMLHttpRequest`对象,也就是创建一个异步调用对象.
+2. 创建一个新的`HTTP`请求,并指定该`HTTP`请求的方法、`URL`及验证信息.
+3. 设置响应`HTTP`请求状态变化的函数.
+4. 发送`HTTP`请求.
+5. 获取异步调用返回的数据.
+6. 使用JavaScript和DOM实现局部刷新.
+
+## get和post
+
+|                  | GET                                                          | POST                                                         |
+| :--------------- | :----------------------------------------------------------- | ------------------------------------------------------------ |
+| 后退按钮/刷新    | 无害                                                         | 数据会被重新提交（浏览器应该告知用户数据会被重新提交）。     |
+| 书签             | 可收藏为书签                                                 | 不可收藏为书签                                               |
+| 缓存             | 能被缓存                                                     | 不能缓存                                                     |
+| 编码类型         | application/x-www-form-urlencoded                            | application/x-www-form-urlencoded 或 multipart/form-data。为二进制数据使用多重编码。 |
+| 历史             | 参数保留在浏览器历史中。                                     | 参数不会保存在浏览器历史中。                                 |
+| 对数据长度的限制 | 是的。当发送数据时，GET 方法向 URL 添加数据；URL 的长度是受限制的（URL 的最大长度是 2048 个字符）。 | 无限制。                                                     |
+| 对数据类型的限制 | 只允许 ASCII 字符。                                          | 没有限制。也允许二进制数据。                                 |
+| 安全性           | 与 POST 相比，GET 的安全性较差，因为所发送的数据是 URL 的一部分。在发送密码或其他敏感信息时绝不要使用 GET ！ | POST 比 GET 更安全，因为参数不会被保存在浏览器历史或 web 服务器日志中。 |
+| 可见性           | 数据在 URL 中对所有人都是可见的。                            | 数据不会显示在 URL 中。                                      |
+
+## 语义化
+
+### 优点
+
+1. 为了在没有CSS的情况下，页面也能呈现出很好地内容结构、代码结构:为了裸奔时好看；
+2. 用户体验：例如title、alt用于解释名词或解释图片信息、label标签的活用；
+3. 有利于SEO：和搜索引擎建立良好沟通，有助于爬虫抓取更多的有效信息：爬虫依赖于标签来确定上下文和各个关键字的权重；
+4. 方便其他设备解析（如屏幕阅读器、盲人阅读器、移动设备）以意义的方式来渲染网页；
+5. 便于团队开发和维护，语义化更具可读性，是下一步吧网页的重要动向，遵循W3C标准的团队都遵循这个标准，可以减少差异化。
+
+## 杂项
+
+### JavaScript 编程
+
+#### 不使用全局变量实现累加器
+
+```javascript
+let add = (function () {
+    let counter = 0;
+    return function () {return counter += 1;}
+})();
+```
+
+#### 数组扁平化
+
+```c++
+function myFunc() {
+    let arr = [1, 2, 3, 4, [5, 6, 7], [8, [9, 10]]]
+    let res = arr.toString().split(',').map(Number)
+    console.log(res);
+}
+```
+
+### 向同一个元素中添加多个事件句柄
+
+addEventListener() 方法允许向同一个元素添加多个事件，且不会覆盖已存在的事件：
+
+### 事件冒泡或事件捕获？
+
+事件传递有两种方式：冒泡与捕获。
+
+事件传递定义了元素事件触发的顺序。 如果你将 <p> 元素插入到 <div> 元素中，用户点击 <p> 元素, 哪个元素的 "click" 事件先被触发呢？
+
+在 冒泡 中，内部元素的事件会先被触发，然后再触发外部元素，即： <p> 元素的点击事件先触发，然后会触发 <div> 元素的点击事件。
+
+在 捕获 中，外部元素的事件会先被触发，然后才会触发内部元素的事件，即： <div> 元素的点击事件先触发 ，然后再触发 <p> 元素的点击事件。
+
+addEventListener() 方法可以指定 "useCapture" 参数来设置传递类型：
+
+addEventListener(event, function, useCapture);
+
+默认值为 false, 即冒泡传递，当值为 true 时, 事件使用捕获传递。
+
+### JavaScript Array 对象
+
+| 方法                                                         |                         描述                         |
+| :----------------------------------------------------------- | :--------------------------------------------------: |
+| [concat()](https://www.runoob.com/jsref/jsref-concat-array.html) |          连接两个或更多的数组，并返回结果。          |
+| [copyWithin()](https://www.runoob.com/jsref/jsref-copywithin.html) |  从数组的指定位置拷贝元素到数组的另一个指定位置中。  |
+| [entries()](https://www.runoob.com/jsref/jsref-entries.html) |                返回数组的可迭代对象。                |
+| [every()](https://www.runoob.com/jsref/jsref-every.html)     |        检测数值元素的每个元素是否都符合条件。        |
+| [fill()](https://www.runoob.com/jsref/jsref-fill.html)       |              使用一个固定值来填充数组。              |
+| [filter()](https://www.runoob.com/jsref/jsref-filter.html)   |     检测数值元素，并返回符合条件所有元素的数组。     |
+| [find()](https://www.runoob.com/jsref/jsref-find.html)       |       返回符合传入测试（函数）条件的数组元素。       |
+| [findIndex()](https://www.runoob.com/jsref/jsref-findindex.html) |     返回符合传入测试（函数）条件的数组元素索引。     |
+| [forEach()](https://www.runoob.com/jsref/jsref-foreach.html) |           数组每个元素都执行一次回调函数。           |
+| [from()](https://www.runoob.com/jsref/jsref-from.html)       |            通过给定的对象中创建一个数组。            |
+| [includes()](https://www.runoob.com/jsref/jsref-includes.html) |          判断一个数组是否包含一个指定的值。          |
+| [indexOf()](https://www.runoob.com/jsref/jsref-indexof-array.html) |        搜索数组中的元素，并返回它所在的位置。        |
+| [isArray()](https://www.runoob.com/jsref/jsref-isarray.html) |                 判断对象是否为数组。                 |
+| [join()](https://www.runoob.com/jsref/jsref-join.html)       |           把数组的所有元素放入一个字符串。           |
+| [keys()](https://www.runoob.com/jsref/jsref-keys.html)       |    返回数组的可迭代对象，包含原始数组的键(key)。     |
+| [lastIndexOf()](https://www.runoob.com/jsref/jsref-lastindexof-array.html) |      搜索数组中的元素，并返回它最后出现的位置。      |
+| [map()](https://www.runoob.com/jsref/jsref-map.html)         | 通过指定函数处理数组的每个元素，并返回处理后的数组。 |
+| [pop()](https://www.runoob.com/jsref/jsref-pop.html)         |       删除数组的最后一个元素并返回删除的元素。       |
+| [push()](https://www.runoob.com/jsref/jsref-push.html)       |   向数组的末尾添加一个或更多元素，并返回新的长度。   |
+| [reduce()](https://www.runoob.com/jsref/jsref-reduce.html)   |         将数组元素计算为一个值（从左到右）。         |
+| [reduceRight()](https://www.runoob.com/jsref/jsref-reduceright.html) |         将数组元素计算为一个值（从右到左）。         |
+| [reverse()](https://www.runoob.com/jsref/jsref-reverse.html) |                 反转数组的元素顺序。                 |
+| [shift()](https://www.runoob.com/jsref/jsref-shift.html)     |             删除并返回数组的第一个元素。             |
+| [slice()](https://www.runoob.com/jsref/jsref-slice-array.html) |         选取数组的一部分，并返回一个新数组。         |
+| [some()](https://www.runoob.com/jsref/jsref-some.html)       |        检测数组元素中是否有元素符合指定条件。        |
+| [sort()](https://www.runoob.com/jsref/jsref-sort.html)       |                对数组的元素进行排序。                |
+| [splice()](https://www.runoob.com/jsref/jsref-splice.html)   |               从数组中添加或删除元素。               |
+| [toString()](https://www.runoob.com/jsref/jsref-tostring-array.html) |           把数组转换为字符串，并返回结果。           |
+| [unshift()](https://www.runoob.com/jsref/jsref-unshift.html) |   向数组的开头添加一个或更多元素，并返回新的长度。   |
+| [valueOf()](https://www.runoob.com/jsref/jsref-valueof-array.html) |                返回数组对象的原始值。                |
+
+### JavaScript String 对象
+
+|                             方法                             |                             描述                             |
+| :----------------------------------------------------------: | :----------------------------------------------------------: |
+|  [charAt()](https://www.runoob.com/jsref/jsref-charat.html)  |                    返回在指定位置的字符。                    |
+| [charCodeAt()](https://www.runoob.com/jsref/jsref-charcodeat.html) |           返回在指定的位置的字符的 Unicode 编码。            |
+| [concat()](https://www.runoob.com/jsref/jsref-concat-string.html) |           连接两个或更多字符串，并返回新的字符串。           |
+| [fromCharCode()](https://www.runoob.com/jsref/jsref-fromcharcode.html) |                  将 Unicode 编码转为字符。                   |
+| [indexOf()](https://www.runoob.com/jsref/jsref-indexof.html) |       返回某个指定的字符串值在字符串中首次出现的位置。       |
+| [includes()](https://www.runoob.com/jsref/jsref-string-includes.html) |             查找字符串中是否包含指定的子字符串。             |
+| [lastIndexOf()](https://www.runoob.com/jsref/jsref-lastindexof.html) | 从后向前搜索字符串，并从起始位置（0）开始计算返回字符串最后出现的位置。 |
+|   [match()](https://www.runoob.com/jsref/jsref-match.html)   |             查找找到一个或多个正则表达式的匹配。             |
+|  [repeat()](https://www.runoob.com/jsref/jsref-repeat.html)  |         复制字符串指定次数，并将它们连接在一起返回。         |
+| [replace()](https://www.runoob.com/jsref/jsref-replace.html) |  在字符串中查找匹配的子串， 并替换与正则表达式匹配的子串。   |
+|  [search()](https://www.runoob.com/jsref/jsref-search.html)  |                 查找与正则表达式相匹配的值。                 |
+| [slice()](https://www.runoob.com/jsref/jsref-slice-string.html) |     提取字符串的片断，并在新的字符串中返回被提取的部分。     |
+|   [split()](https://www.runoob.com/jsref/jsref-split.html)   |                  把字符串分割为字符串数组。                  |
+| [startsWith()](https://www.runoob.com/jsref/jsref-startswith.html) |             查看字符串是否以指定的子字符串开头。             |
+|  [substr()](https://www.runoob.com/jsref/jsref-substr.html)  |           从起始索引号提取字符串中指定数目的字符。           |
+| [substring()](https://www.runoob.com/jsref/jsref-substring.html) |           提取字符串中两个指定的索引号之间的字符。           |
+| [toLowerCase()](https://www.runoob.com/jsref/jsref-tolowercase.html) |                     把字符串转换为小写。                     |
+| [toUpperCase()](https://www.runoob.com/jsref/jsref-touppercase.html) |                     把字符串转换为大写。                     |
+|    [trim()](https://www.runoob.com/jsref/jsref-trim.html)    |                     去除字符串两边的空白                     |
+| [toLocaleLowerCase()](https://www.runoob.com/jsref/jsref-tolocalelowercase.html) |          根据本地主机的语言环境把字符串转换为小写。          |
+| [toLocaleUpperCase()](https://www.runoob.com/jsref/jsref-tolocaleuppercase.html) |          根据本地主机的语言环境把字符串转换为大写。          |
+| [valueOf()](https://www.runoob.com/jsref/jsref-valueof-string.html) |                 返回某个字符串对象的原始值。                 |
+| [toString()](https://www.runoob.com/jsref/jsref-tostring.html) |                       返回一个字符串。                       |
+
+### 强缓存和协商缓存
+
+浏览器缓存主要有以下几个优点：
+
+1. 减少重复数据请求，避免通过网络再次加载资源，节省流量。
+2. 降低服务器的压力，提升网站性能。
+3. 加快客户端加载网页的速度， 提升用户体验。
+
+浏览器缓存分为强缓存和协商缓存，两者有两个比较明显的区别：
+
+1. 如果浏览器命中强缓存，则不需要给服务器发请求；而协商缓存最终由服务器来决定是否使用缓存，即客户端与服务器之间存在一次通信。
+2. 在 `chrome` 中强缓存（虽然没有发出真实的 `http` 请求）的请求状态码返回是 `200 (from cache)`；而协商缓存如果命中走缓存的话，请求的状态码是 `304 (not modified)`。 不同浏览器的策略不同，在 `Fire Fox`中，`from cache` 状态码是 304.
+
+![8](https://cdn.jsdelivr.net/gh/Hsueh-Xue/Hsueh-Xue.github.io@master/upload/interview/8.png)
+
+### 跨域
+
+**当协议、子域名、主域名、端口号中任意一个不相同时，都算作不同域**。不同域之间相互请求资源，就算作“跨域”。常见跨域场景如下图所示：
+
+![9](https://cdn.jsdelivr.net/gh/Hsueh-Xue/Hsueh-Xue.github.io@master/upload/interview/9.png)
+
+#### 跨域解决方案
+
+##### JSONP
+
+利用 `<script>` 标签没有跨域限制的漏洞，网页可以得到从其他来源动态产生的 JSON 数据。JSONP请求一定需要对方的服务器做支持才可以。
+
+JSONP优点是简单兼容性好，可用于解决主流浏览器的跨域数据访问的问题。**缺点是仅支持get方法具有局限性,不安全可能会遭受XSS攻击。**
+
+##### cors
+
+**CORS 需要浏览器和后端同时支持。IE 8 和 9 需要通过 XDomainRequest 来实现**。
+
+浏览器会自动进行 CORS 通信，实现 CORS 通信的关键是后端。只要后端实现了 CORS，就实现了跨域。
+
+服务端设置 Access-Control-Allow-Origin 就可以开启 CORS。 该属性表示哪些域名可以访问资源，如果设置通配符则表示所有网站都可以访问资源。
+
+虽然设置 CORS 和前端没什么关系，但是通过这种方式解决跨域问题的话，会在发送请求时出现两种情况，分别为**简单请求**和**复杂请求**。
+
+##### postMessage
+
+postMessage是HTML5 XMLHttpRequest Level 2中的API，且是为数不多可以跨域操作的window属性之一，它可用于解决以下方面的问题：
+
+- 页面和其打开的新窗口的数据传递
+- 多窗口之间消息传递
+- 页面与嵌套的iframe消息传递
+- 上面三个场景的跨域数据传递
+
+**postMessage()方法允许来自不同源的脚本采用异步方式进行有限的通信，可以实现跨文本档、多窗口、跨域消息传递**。
+
+##### websocket
+
+Websocket是HTML5的一个持久化的协议，它实现了浏览器与服务器的全双工通信，同时也是跨域的一种解决方案。WebSocket和HTTP都是应用层协议，都基于 TCP 协议。但是 **WebSocket 是一种双向通信协议，在建立连接之后，WebSocket 的 server 与 client 都能主动向对方发送或接收数据**。同时，WebSocket 在建立连接时需要借助 HTTP 协议，连接建立好了之后 client 与 server 之间的双向通信就与 HTTP 无关了。
+
+原生WebSocket API使用起来不太方便，我们使用`Socket.io`，它很好地封装了webSocket接口，提供了更简单、灵活的接口，也对不支持webSocket的浏览器提供了向下兼容。
+
+##### Node中间件代理(两次跨域)
+
+实现原理：**同源策略是浏览器需要遵循的标准，而如果是服务器向服务器请求就无需遵循同源策略。** 代理服务器，需要做以下几个步骤：
+
+- 接受客户端请求 。
+- 将请求 转发给服务器。
+- 拿到服务器 响应 数据。
+- 将 响应 转发给客户端。
+
+##### nginx反向代理
+
+实现原理类似于Node中间件代理，需要你搭建一个中转nginx服务器，用于转发请求。
+
+使用nginx反向代理实现跨域，是最简单的跨域方式。只需要修改nginx的配置即可解决跨域问题，支持所有浏览器，支持session，不需要修改任何代码，并且不会影响服务器性能。
+
+实现思路：通过nginx配置一个代理服务器（域名与domain1相同，端口不同）做跳板机，反向代理访问domain2接口，并且可以顺便修改cookie中domain信息，方便当前域cookie写入，实现跨域登录。
+
+##### window.name + iframe
+
+window.name属性的独特之处：name值在不同的页面（甚至不同域名）加载后依旧存在，并且可以支持非常长的 name 值（2MB）。
+
+##### location.hash + iframe
+
+实现原理： a.html欲与c.html跨域相互通信，通过中间页b.html来实现。 三个页面，不同域之间利用iframe的location.hash传值，相同域之间直接js访问来通信。
+
+##### document.domain + iframe
+
+**该方式只能用于二级域名相同的情况下，比如 `a.test.com` 和 `b.test.com` 适用于该方式**。 只需要给页面添加 `document.domain ='test.com'` 表示二级域名都相同就可以实现跨域。
+
+实现原理：两个页面都通过js强制设置document.domain为基础主域，就实现了同域。
+
+### 闭包
+
+#### 什么是闭包
+
+函数执行后返回结果是一个内部函数，并被外部变量所引用，如果内部函数持有被执行函数作用域的变量，即形成了闭包。
+
+可以在内部函数访问到外部函数作用域。使用闭包，一可以读取函数中的变量，二可以将函数中的变量存储在内存中，保护变量不被污染。而正因闭包会把函数中的变量值存储在内存中，会对内存有消耗，所以不能滥用闭包，否则会影响网页性能，造成内存泄漏。当不需要使用闭包时，要及时释放内存，可将内层函数对象的变量赋值为null。
+
+#### 闭包原理
+
+函数执行分成两个阶段(预编译阶段和执行阶段)。
+
+- 在预编译阶段，如果发现内部函数使用了外部函数的变量，则会在内存中创建一个“闭包”对象并保存对应变量值，如果已存在“闭包”，则只需要增加对应属性值即可。
+- 执行完后，函数执行上下文会被销毁，函数对“闭包”对象的引用也会被销毁，但其内部函数还持用该“闭包”的引用，所以内部函数可以继续使用“外部函数”中的变量
+
+利用了函数作用域链的特性，一个函数内部定义的函数会将包含外部函数的活动对象添加到它的作用域链中，函数执行完毕，其执行作用域链销毁，但因内部函数的作用域链仍然在引用这个活动对象，所以其活动对象不会被销毁，直到内部函数被烧毁后才被销毁
+
+#### 优点
+
+1. 可以从内部函数访问外部函数的作用域中的变量，且访问到的变量长期驻扎在内存中，可供之后使用
+2. 避免变量污染全局
+3. 把变量存到独立的作用域，作为私有成员存在
+
+#### 缺点
+
+1. 对内存消耗有负面影响。因内部函数保存了对外部变量的引用，导致无法被垃圾回收，增大内存使用量，所以使用不当会导致内存泄漏
+2. 对处理速度具有负面影响。闭包的层级决定了引用的外部变量在查找时经过的作用域链长度
+3. 可能获取到意外的值(captured value)
+
+参考文章：
+
+[一文搞定 UDP 和 TCP 高频面试题！](https://zhuanlan.zhihu.com/p/108822858)
+
+[C++ STL ：Vector内存分配与释放](https://zhuanlan.zhihu.com/p/338390842)
+
+[JavaGuide](https://github.com/Snailclimb/JavaGuide)
+
+[FE-Interview](https://github.com/lgwebdream/FE-Interview)
+
+[Mysql锁机制简单了解一下](https://blog.csdn.net/qq_34337272/article/details/80611486)
