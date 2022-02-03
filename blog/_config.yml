@@ -104,5 +104,5 @@ theme: fluid
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: 'git'
-  repository: https://github.com/Hsueh-Xue/Hsueh-Xue.github.io.git
+  repository: git@github.com:Hsueh-Xue/Hsueh-Xue.github.io.git
   branch: master
